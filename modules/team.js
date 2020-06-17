@@ -1,43 +1,36 @@
 module.exports = class Team {
     constructor(team) {
         this.zillions = parseInt(team.zillions);
-        this.kudos = parseInt(team.kudos);
+        this.kudosBanked = parseInt(team.kudosBanked);
+        this.acquiredKudos = parseInt(team.acquiredKudos);
         this.bankID = team.bankID;
         this.logID = team.logID;
         this.fName = team.fName;
         this.roleID = team.roleID;
         this.tag = team.tag;
         this.cashCoordinates = team.cashCoordinates;
+        //this.startupCoordinates = team.startupCoordinates;
         /*
         */
-    }
-    updateteam(team){
-        this.zillions = parseInt(team.zillions);
-        this.kudos = parseInt(team.kudos);
-        this.bankID = team.bankID;
-        this.logID = team.logID;
-        this.fName = team.fName;
-        this.roleID = team.roleID;
-        this.tag = team.tag;
     }
     outgoing(amount, resource) {
         if (resource === "zillions") {
             this.zillions = this.zillions - amount;
         } else if (resource === "kudos") {
-            this.kudos = this.kudos - amount;
+            this.kudosBanked = this.kudosBanked - amount;
         }
     } //outgoing
     incoming(amount, resource) {
         if (resource === "zillions") {
             this.zillions = this.zillions + amount;
         } else if (resource === "kudos") {
-            this.kudos = this.kudos + amount;
+            this.acquiredKudos = this.acquiredKudos + amount;
         } 
     } //incoming
     checkAmount(amount, resource){
-        if (resource === "zillions" && amount < this.zillions) {
+        if (resource === "zillions" && amount <= this.zillions) {
             return true;
-        } else if (resource === "kudos" && amount <= this.kudos) {
+        } else if (resource === "kudos" && amount <= this.kudosBanked) {
             return true; 
         } 
         else

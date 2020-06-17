@@ -2,7 +2,9 @@ const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
 const Team = require('./modules/team.js')
-//const test = require('./modules/startupData.js')
+const functions = require('./commands/functions.js')
+
+const test = require('./modules/startupData.js')
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -23,7 +25,7 @@ client.once('ready', () => {
  });
 
 
-client.on('message', message => {
+client.on('message', async message => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   const args = message.content.slice(prefix.length).split(/ +/);
@@ -81,9 +83,5 @@ client.on('message', message => {
   }
 
 });
-
-
-
-
 
 client.login(token);

@@ -1,42 +1,46 @@
 { 
     "bju": {
-        "zillions" : "50",
-        "kudos": "0",
+        "zillions" : "87",
+        "kudosBanked": "4",
+        "acquiredKudos": "0",
         "bankID": "700148873091481641",
         "logID": "700073585049600061", 
         "fName": "Beijing United", 
         "roleID": "699405235319341067",
         "tag": "bju", 
-        "cashCoordinates": 0
+        "cashCoordinates": "2"
     },
     "mm": {
-        "zillions" : "50",
-        "kudos": "0",
+        "zillions" : "85",
+        "kudosBanked": "5",
+        "acquiredKudos": "0",
         "bankID": "700074074537459933",
         "logID": "700074043402878987", 
-        "fName": "Mumbai Moguls", 
+        "fName": "The Mumbai Moguls", 
         "roleID": "699405615549906974",
         "tag": "mm",
-        "cashCoordinates": 2
+        "cashCoordinates": "4"
     },
     "osu": {
-        "zillions" : "57",
-        "kudos": "0",
+        "zillions" : "75",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
         "bankID": "699501222318702683",
         "logID": "699404875766956143", 
-        "fName": "Osaka Underground", 
+        "fName": "The Osaka Underground", 
         "roleID": "699081448950595686",
         "tag": "osu",
-        "cashCoordinates": 3  
+        "cashCoordinates": "5"
     },    
     "frv": {
-        "zillions" : "9999999",
-        "kudos": "0",
+        "zillions" : "85",
+        "kudosBanked": "5",
+        "acquiredKudos": "0",
         "bankID": "699501156845617292",
         "logID": "699404648649588906", 
         "fName": "The French Revolution", 
         "roleID": "699081375680036894",
         "tag": "frv",
-        "cashCoordinates": 4
+        "cashCoordinates": "6"
     }
   }

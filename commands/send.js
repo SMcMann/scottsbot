@@ -14,9 +14,9 @@ module.exports = {
         let senderClass = functions.searchID(message.member);
         let senderJob = functions.jobCheck(message.member)
 
-        let senderCash = functions.getSpreadCash(senderClass);
-        console.log(senderCash);
-
+        if (senderJob != "Owner"){
+            throw "You must be an Owner to manage your team's finances"
+        }
 
         const user = message.member.displayName        
         var recieverClass;
@@ -55,9 +55,9 @@ module.exports = {
             throw "Must enter amount greater than 0"
 
         //lastly checks to see if sender has the correct amount of resources
-      //  let valid = senderClass.checkAmount(amount, resource);
-      //  if (!valid)
-      //      throw ("You do not have enough " + resource + " to send");
+        let valid = senderClass.checkAmount(amount, "zillions");
+        if (!valid)
+            throw ("You do not have enough cash to send");
 
         
 
@@ -74,16 +74,16 @@ module.exports = {
                         if (collected.first().emoji.name == '👍') {
                              //the actual exchange of resources  
 
-                            //senderClass.outgoing(parseInt(amount), resource); // 
-                           // recieverClass.incoming(parseInt(amount), resource);
+                            senderClass.outgoing(parseInt(amount), "zillions"); 
+                            recieverClass.incoming(parseInt(amount), "zillions");
 
                             //reply to sender confirmation
-                            message.reply("Sent " + amount + "  zillion to " + recieverClass.fName);
+                            message.reply("Sent " + amount + " zillion to " + recieverClass.fName);
 
                             //update whoever recieved the resource in their log channel 
                             var channel = message.client.channels.cache.get(recieverClass.logID);
                             channel.send(
-                                user + ` sent you: ` + amount + "  zillion" 
+                                user + ` sent you: ` + amount + " zillion" 
                             );
                             //UPDATE BANK INFO FOR RECIEVER
                             channel = message.client.channels.cache.get(recieverClass.bankID);
@@ -103,6 +103,15 @@ module.exports = {
 
                             channel = message.client.channels.cache.get(senderClass.logID);
                             channel.send(user + " sent " + recieverClass.fName + " " + amount + " zillion ");
+
+                            //update google spreadsheets
+                            try{
+                             functions.updateCashSpreadsheet(senderClass, recieverClass, parseInt(amount));                               
+                            }
+                            catch {
+                                console.log("error with sheets")
+                            }
+
                             
                         }//if thumbs up
                         else
