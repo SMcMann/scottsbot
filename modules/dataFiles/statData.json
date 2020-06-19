@@ -1,0 +1,42 @@
+{ 
+    "name": {
+        "statName" : "name",
+        "general" : "```CSS\nNo significant correlations found [Inquiry credit refunded]```",
+        "specific": "```CSS\nNo significant correlations found [Inquiry credit refunded]```",
+        "freebie": true,
+        "bju": false,
+        "mm": false,
+        "osu": false, 
+        "frv": false
+    },
+    "position": {
+        "statName" : "position",
+        "general" : "```CSS\nAthlete performance estimates derived from comparing athletes of the same position. Correlation estimates not possible [Inquiry credit refunded]```",
+        "specific": "```CSS\nAthlete performance estimates derived from comparing athletes of the same position. Correlation estimates not possible [Inquiry credit refunded]```",
+        "freebie": true,
+        "bju": false,
+        "mm": false,
+        "osu": false, 
+        "frv": false
+    },
+    "salary": {
+        "statName" : "salary",
+        "general" : "```CSS\nSalary is generally indicative of performance.\nTangentially, iron-clad athlete contracts prevent changing of athlete salaries.```",
+        "specific": "```CSS\nSalary is derived (backcalculated) from the total estimate of player performance.\nThe total salary of players can be safely regarded as indicative of the players’ performance +/-3 zillion (most often within +/-2 zillion)\nIn other words, the most expensive players are more likely to be better than the least expensive players, but the performance:salary ratio is not constant. \nOr to phrase it another way, some athletes are undervalued by up to 3 zillion, and others are overvalued by up to 3 zillion.\nSince salary is backcalculated from previously estimated performance, no changes to the rules of the sport (on the field) will directly effect athlete salary or directly effect the relationship between athlete salary and athlete performance.\nTangentially, Iron-clad athlete contracts prevent changing of athlete salaries```",
+        "freebie": false,
+        "bju": false,
+        "mm": false,
+        "osu": false, 
+        "frv": false
+    },
+    "popularity": {
+        "statName" : "popularity",
+        "general" : "```CSS\nPopularity has no significant correlation with performance. Monetary modelling suggests more popular players will intrinsically produce modest profits for the franchise – just through their charisma and established fanbase.```",
+        "specific": "```CSS\nPopularity has the following effects on the franchise income are as followed:\n> Superstar (+5 zillion)\n> Popular (+3 zillion) \n>Unknown (+1 zillion)\n> Disliked (+2 zillion) \n> No sports rule changes will effect the relationship between franchise popularity and post-season franchise income.```",
+        "freebie": false,
+        "bju": false,
+        "mm": false,
+        "osu": false, 
+        "frv": false
+    }
+  }
