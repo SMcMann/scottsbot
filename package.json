@@ -1,7 +1,11 @@
 {
   "name": "scottsbot",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "��#\u0000 \u0000s\u0000c\u0000o\u0000t\u0000t\u0000s\u0000b\u0000o\u0000t\u0000\r\u0000 \u0000",
+=======
+  "description": "",
+>>>>>>> 84613f9f109a4cc31705c27d62873802deb5d229
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "discord.js": "^12.2.0",
     "google-spreadsheet": "^3.0.11",
     "googleapis": "^39.2.0",
@@ -18,4 +23,11 @@
   },
   "keywords": [],
   "devDependencies": {}
+=======
+    "discord.js": "^12.1.1",
+    "save": "^2.4.0",
+    "sequelize": "^5.21.6",
+    "sqlite3": "^4.1.1"
+  }
+>>>>>>> 84613f9f109a4cc31705c27d62873802deb5d229
 }
