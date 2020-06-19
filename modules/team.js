@@ -9,6 +9,7 @@ module.exports = class Team {
         this.roleID = team.roleID;
         this.tag = team.tag;
         this.cashCoordinates = team.cashCoordinates;
+        this.statTokens = team.statTokens;
         //this.startupCoordinates = team.startupCoordinates;
         /*
         */

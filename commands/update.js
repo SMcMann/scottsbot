@@ -20,7 +20,7 @@ module.exports = {
             throw "You are not allowed to use this command"
         }
 
-        message.reply('Update all local data with data from the Google Spreadsheets? \nThis action cannot be undone \nConfirm with a thumb up or cancel with a thumb down.');
+        message.reply('```css\nUpdate all local data with data from the Google Spreadsheets? \nThis action cannot be undone \nConfirm with a thumb up or cancel with a thumb down.\n```');
     
         // Reacts so the user only have to click the emojis
         message.react('👍').then(r => {
@@ -30,6 +30,8 @@ module.exports = {
         message.awaitReactions((reaction, user) => user.id == message.author.id && (reaction.emoji.name == '👍' || reaction.emoji.name == '👎'),
         { max: 1, time: 10000 }).then(collected => {
                 if (collected.first().emoji.name == '👍') {
+                    message.reply('```css\nWorking...\n```');
+            
                     try{
                         functions.updateFromGoogle();
                     }
@@ -44,16 +46,14 @@ module.exports = {
                             var exampleEmbed = functions.newEmbed(allTeams[i]);
                             channel.send({ embed: exampleEmbed });
                 
-                            channel = message.client.channels.cache.get(allTeams[i].logID);
-                            channel.bulkDelete(100);
                         }//for                          
                      }, 2000);
 
                 }//if thumbs up
                 else
-                        message.reply('Operation canceled.');
+                        message.reply('```cssOperation canceled.\n```');
         }).catch(() => {
-                message.reply('No reaction after 10 seconds, operation canceled');
+                message.reply('```cssNo reaction after 10 seconds, operation canceled\n```');
         });
 
     },//update

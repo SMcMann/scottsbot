@@ -1,5 +1,4 @@
 const Team = require('../modules/team.js')
-const Market = require('../modules/market.js')
 const test = require('../modules/startupData.js')
 const functions = require('./functions.js')
 
@@ -10,11 +9,12 @@ module.exports = {
     execute(message, args) {
 
         if (message.author.id != '140593347520626698') { //Scott's ID so no one else can use it
-        throw "YOU DO NOT HAVE PERMISSION FOR THIS COMMAND"
+        throw "```css\nYOU DO NOT HAVE PERMISSION FOR THIS COMMAND```\n"
     }
         
         //setTimeout(() => { 
             var now = new Date();
+            let draftTracker = "722279997959569458"
 
             for (i = 0; i < allTeams.length; i++) {
                 channel = message.client.channels.cache.get(allTeams[i].bankID);
@@ -23,6 +23,9 @@ module.exports = {
                 channel.send({ embed: bankEmbed });
     
                 channel = message.client.channels.cache.get(allTeams[i].logID);
+                channel.bulkDelete(100);
+
+                channel = message.client.channels.cache.get(draftTracker);
                 channel.bulkDelete(100);
             }//for                          
         // }, 2000);

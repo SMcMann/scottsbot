@@ -1,6 +1,7 @@
 const Team = require('../modules/team.js')
 const Athlete = require('../modules/athletes.js')
 const Draft = require('../modules/draft.js')
+const Stats = require('../modules/stats.js')
 const { token } = require('../config.json');
 
 const athletes = require('../modules/dataFiles/athleteData.json')
@@ -44,28 +45,34 @@ module.exports = {
         }
     },
     jobCheck(User){ //does not throw errors
-        if (User.roles.cache.some((r) => r.name === "Owner")) return "Owner";
+        if (User.roles.cache.some((r) => r.name === "Supercomputer")) return "Supercomputer";
         else if (User.roles.cache.some((r) => r.name === "GM")) return "GM";
         else if (User.roles.cache.some((r) => r.name === "Saber")) return "Saber";
         else if (User.roles.cache.some((r) => r.name === "VP")) return "VP";
-        else if (User.roles.cache.some((r) => r.name === "Supercomputer")) return "Supercomputer";
+        else if (User.roles.cache.some((r) => r.name === "Owner")) return "Owner";
         else throw "You don't have a role!"
     },
-    searchID(User) {
+    searchID(User) {//returns the class of the discord tag of the person doing an action
         if (User.roles.cache.some((r) => r.name === FRV.fName)) return FRV;
         else if (User.roles.cache.some((r) => r.name === BJU.fName)) return BJU;
         else if (User.roles.cache.some((r) => r.name === MM.fName)) return MM;
         else if (User.roles.cache.some((r) => r.name === OSU.fName)) return OSU;
-        else throw "You have no team!"
+        else throw "```CSS\nYou have no team!\n```"
     },
-    searchIDProto(User) {
+    searchIDProto(User) {//returns the class of the discord tag of the person doing an action WHY DO I HAVEA DUPLICATE THIS ISN'T SUPPOSED TO RETURN ANYTHING???
         if (User.roles.cache.some((r) => r.name === FRV.fName)) return FRV;
         else if (User.roles.cache.some((r) => r.name === BJU.fName)) return BJU;
         else if (User.roles.cache.some((r) => r.name === MM.fName)) return MM;
         else if (User.roles.cache.some((r) => r.name === OSU.fName)) return OSU;
-        else throw "Having trouble finding your target, maybe try using their role name instead?"
+        else throw "```CSS\nHaving trouble finding your target, maybe try using their role name instead?\n```"
     },
-    newEmbed(targetClass){
+    statFinder(stat) {//
+        for (var i = 0; i < statArray.length; i++){
+            if (statArray[i].statName === stat)
+                return statArray[i];
+        }
+    },//statFinder
+    newEmbed(targetClass) {//creates a new embed specifically for the Banks of all teams
         const exampleEmbed = new Discord.MessageEmbed()
         .setTitle('Bank')
         //.setURL('https://discord.js.org/')
@@ -186,17 +193,22 @@ module.exports = {
           //console.log(doc.title);
         
           const sheet = doc.sheetsByIndex[5]; // get's the "Cash" page of the sheets
+          const sheet2 = doc.sheetsByIndex[4]; // get's the "kudos" page of the sheets
         
           await (sheet.loadCells('I2:I17'));
+          await (sheet2.loadCells('K2:L17'));
           //console.log(sheet.cellStats); // total cells, loaded, how many non-empty
 
 
           for (i = 0; i < allTeams.length; i++) {
-            cell = sheet.getCellByA1(`I${allTeams[i].sender.cashCoordinates}`);
+            cell = sheet.getCellByA1(`I${allTeams[i].cashCoordinates}`);
+            cell2 = sheet2.getCellByA1(`K${allTeams[i].cashCoordinates}`);
+            cell3 = sheet2.getCellByA1(`L${allTeams[i].cashCoordinates}`);         
             allTeams[i].zillions = cell.value;
-
+            allTeams[i].kudosBanked = cell2.value;
+            allTeams[i].acquiredKudos = cell3.value;
         }//for
-        console.log("Cash Has been updated from GoogleSheets 'Current Cash'");
+        console.log("Cash and Kudos have been updated from GoogleSheets 'Current Cash' and 'remaining kudos'");
     },
     async setupFromGoogle(){ //updates the local Data directly NOT JSON from "starting Cash" and "Starting Kudos"
         await doc.useServiceAccountAuth({
@@ -329,11 +341,11 @@ module.exports = {
           //console.log(sheet.cellStats); // total cells, loaded, how many non-empty
 
     },//setupDraft
-    loadAthletes(){ //defunt not used. Kept for potentially useful code
+    loadStats(statArray){ //defunt not used. Kept for potentially useful code
    
         var aData;
-        var i = 1
-        fs.readFile('./modules/dataFiles/athleteData.json', 'utf8', (err, jsonString) => {
+        var i = 0
+        fs.readFile('./modules/dataFiles/statData.json', 'utf8', (err, jsonString) => {
             if (err) {
                 console.log("Error reading file from disk:", err)
                 return
@@ -342,20 +354,24 @@ module.exports = {
                 aData = JSON.parse(jsonString)
                 //console.log(aData.[1]) // => "Customer address is: Infinity Loop Drive"
                 //console.log(Object.keys(aData));
+                
                 for (var key in aData) {
                     if (aData.hasOwnProperty(key)) {      
                       var val = aData[key];
-                      athleteArray[i] = new Athlete(val);
-                      //console.log(athleteArray[i]);
+
+                      //new Stats(val);
+                      statArray.push(new Stats(val));    // adds a new element (Lemon) to fruits 
+                      //console.log(statArray[i]);
                       i++;
                     }
                   }
+                  
             } catch(err) {
                 console.log('Error parsing JSON string:', err)
             }
         })
-        console.log("athleteArray loaded from JSON")
-        return athleteArray;
+        console.log("Stats loaded from JSON")
+        return statArray;
         
         
     

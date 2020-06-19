@@ -15,7 +15,7 @@ module.exports = {
         let senderJob = functions.jobCheck(message.member)
 
         if (senderJob != "Owner"){
-            throw "You must be an Owner to manage your team's finances"
+            throw "```CSS\nYou must be an Owner to manage your team's finances\n```"
         }
 
         const user = message.member.displayName        
@@ -34,12 +34,12 @@ module.exports = {
             recieverClass = functions.protoValidateTarget(args[1]);
         }
         if (!recieverClass){
-            throw "No vailid target found"
+            throw "```CSS\nNo vailid target found\n```"
         }
 
         //stops user from trying to send themselves their own resources
         if (recieverClass === senderClass)
-            throw "You cannot send resources to yourself!"
+            throw "```CSS\nYou cannot send resources to yourself!\n```"
 
         //checks all arguements to see if there is a valid int provided, then saves it in "amount"
         var amount;
@@ -48,20 +48,20 @@ module.exports = {
         else if (Number.isInteger(parseInt(args[1])))
             amount = args[1];
         if (!amount)    
-            throw "You did not provide a valid amount"
+            throw "```CSS\nYou did not provide a valid amount\n```"
 
         //no negative or 0 amounts allowed (no robbery)
         if (amount <= 0)
-            throw "Must enter amount greater than 0"
+            throw "```CSS\nMust enter amount greater than 0\n```"
 
         //lastly checks to see if sender has the correct amount of resources
         let valid = senderClass.checkAmount(amount, "zillions");
         if (!valid)
-            throw ("You do not have enough cash to send");
+            throw ("```CSS\nYou do not have enough cash to send\n```");
 
         
 
-        message.reply('Send ' + amount + " zillion to " + recieverClass.fName +'? \nConfirm with a thumb up or cancel with a thumb down.');
+        message.reply('```CSS\nSend ' + amount + " zillion to " + recieverClass.fName +'? \nConfirm with a thumb up or cancel with a thumb down.\n```');
     
         // Reacts so the user only have to click the emojis
         message.react('👍').then(r => {
@@ -78,12 +78,12 @@ module.exports = {
                             recieverClass.incoming(parseInt(amount), "zillions");
 
                             //reply to sender confirmation
-                            message.reply("Sent " + amount + " zillion to " + recieverClass.fName);
+                            message.reply("```CSS\nSent " + amount + " zillion to " + recieverClass.fName + "\n```");
 
                             //update whoever recieved the resource in their log channel 
                             var channel = message.client.channels.cache.get(recieverClass.logID);
-                            channel.send(
-                                user + ` sent you: ` + amount + " zillion" 
+                            channel.send("```CSS\n[" + 
+                                user + `] sent you: ` + amount + " zillion\n```" 
                             );
                             //UPDATE BANK INFO FOR RECIEVER
                             channel = message.client.channels.cache.get(recieverClass.bankID);
@@ -102,7 +102,7 @@ module.exports = {
                             channel.send({ embed: exampleEmbed });
 
                             channel = message.client.channels.cache.get(senderClass.logID);
-                            channel.send(user + " sent " + recieverClass.fName + " " + amount + " zillion ");
+                            channel.send("```CSS\n[" + user + "] sent " + recieverClass.fName + " " + amount + " zillion \n```");
 
                             //update google spreadsheets
                             try{
@@ -117,7 +117,7 @@ module.exports = {
                         else
                                 message.reply('Operation canceled.');
                 }).catch(() => {
-                        message.reply('No reaction after 10 seconds, operation canceled');
+                        message.reply('```CSS\nNo reaction after 10 seconds, operation canceled\n```');
                 });
     
     }//execute

@@ -1,6 +1,5 @@
 const Team = require('./team.js')
 const Athlete = require('./athletes.js')
-const Market = require('../modules/market.js')
 const startup = require('../modules/dataFiles/startupData.json')
 const athletes = require('../modules/dataFiles/athleteData.json')
 const functions = require('../commands/functions.js')
@@ -22,6 +21,7 @@ module.exports = {
     var: draftingTeam = "",
     let: athleteArray = [],
     let: draftArray = [],
+    let: statArray = [],
     let: athleteArray[0] = {
         "Name": "Scott McMann",
         "League_Nom_de_Plume": "Bob the Ninja Man",
@@ -51,7 +51,7 @@ module.exports = {
     call: functions.setupAthletes(),
     call: functions.setupFromGoogle(),
     call: functions.setupDraft(),
-    //call: functions.scheduleEvent()
+    call: functions.loadStats(statArray)
 
 }
 

@@ -76,14 +76,14 @@ module.exports = {
 
             }//else if (args.length === 1)
             else if (args.length > 2)
-                throw "You have too many arguemnts. \n Proper usade of !kudos is: \n <@target> <amount> OR <@target> for single kudos amount "
+                throw "```CSS\nYou have too many arguemnts. \n Proper usade of !kudos is: \n <@target> <amount> OR <@target> for single kudos amount \n```"
 
             //lastly checks to see if sender has the correct amount of resources
             let valid = senderClass.checkAmount(amount, resource);
             if (!valid)
-                throw ("You do not have enough kudos to send");
+                throw ("```CSS\nYou do not have enough kudos to send```\n");
 
-        message.reply('Send ' + amount + " kudos to " + recieverClass.fName +'? \nConfirm with a thumb up or cancel with a thumb down.');
+        message.reply('```CSS\nSend ' + amount + " kudos to " + recieverClass.fName +'? \nConfirm with a thumb up or cancel with a thumb down.```\n');
     
         // Reacts so the user only have to click the emojis
         message.react('👍').then(r => {
@@ -100,12 +100,12 @@ module.exports = {
                             recieverClass.incoming(parseInt(amount), resource);
 
                             //reply to sender confirmation
-                            message.reply("Sent " + amount + " kudos to " + recieverClass.fName);
+                            message.reply("```CSS\nSent " + amount + " kudos to " + recieverClass.fName + "```\n");
  
                             //update whoever recieved the resource in their log channel 
                             var channel = message.client.channels.cache.get(recieverClass.logID);
-                            channel.send(
-                                user + ` sent you: ` + amount + " kudos" 
+                            channel.send("```CSS\n["+
+                                user + `] sent you: ` + amount + " kudos```\n" 
                             );
                             //UPDATE BANK INFO FOR RECIEVER
                             channel = message.client.channels.cache.get(recieverClass.bankID);
@@ -124,7 +124,7 @@ module.exports = {
                             channel.send({ embed: exampleEmbed });
 
                             channel = message.client.channels.cache.get(senderClass.logID);
-                            channel.send(user + " sent " + recieverClass.fName + " " + amount + " kudos ");
+                            channel.send("```CSS\n["+ user + "] sent " + recieverClass.fName + " " + amount + " kudos ```\n");
 
                             //update google spreadsheets
                             try{
@@ -136,7 +136,7 @@ module.exports = {
                             
                         }//if thumbs up
                         else
-                                message.reply('Operation canceled.');
+                                message.reply('```css\nOperation canceled.```\n');
                 }).catch(() => {
                         message.reply('No reaction after 10 seconds, operation canceled');
                 });

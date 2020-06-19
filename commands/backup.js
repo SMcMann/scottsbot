@@ -1,5 +1,4 @@
 const Team = require('../modules/team.js')
-const Market = require('../modules/market.js')
 const test = require('../modules/startupData.js')
 const fs = require('fs');
 

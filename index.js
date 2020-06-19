@@ -22,6 +22,8 @@ const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
   console.log('Ready!');
+  client.user.setActivity("Halo 27: Master Chief's Big Wedding", { type: 'PLAYING' });
+
  });
 
 
@@ -78,7 +80,7 @@ client.on('message', async message => {
   try {
     command.execute(message, args);
   } catch (error) {
-    console.error(error);
+    //console.error(error);
     message.reply(error);
   }
 

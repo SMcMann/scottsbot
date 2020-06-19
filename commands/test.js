@@ -22,7 +22,7 @@ module.exports = {
     usage: '',
     execute(message, args) {
  
-
+        message.reply("```CSS\n .test\n[test]\n{test}\n*test*\n```")
 
     }//execute
 

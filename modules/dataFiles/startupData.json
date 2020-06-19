@@ -8,7 +8,8 @@
         "fName": "Beijing United", 
         "roleID": "699405235319341067",
         "tag": "bju", 
-        "cashCoordinates": "2"
+        "cashCoordinates": "2",
+        "statTokens" : 1
     },
     "mm": {
         "zillions" : "85",
@@ -19,7 +20,8 @@
         "fName": "The Mumbai Moguls", 
         "roleID": "699405615549906974",
         "tag": "mm",
-        "cashCoordinates": "4"
+        "cashCoordinates": "4",
+        "statTokens" : 1
     },
     "osu": {
         "zillions" : "75",
@@ -30,7 +32,8 @@
         "fName": "The Osaka Underground", 
         "roleID": "699081448950595686",
         "tag": "osu",
-        "cashCoordinates": "5"
+        "cashCoordinates": "5",
+        "statTokens" : 1
     },    
     "frv": {
         "zillions" : "85",
@@ -41,6 +44,7 @@
         "fName": "The French Revolution", 
         "roleID": "699081375680036894",
         "tag": "frv",
-        "cashCoordinates": "6"
+        "cashCoordinates": "6",
+        "statTokens" : 1
     }
   }

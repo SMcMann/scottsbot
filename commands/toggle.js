@@ -7,7 +7,7 @@ const draftAnnouncement = "722279997959569458"
 module.exports = {
     name: 'toggle',
     cooldown: 0,
-    description: 'deletes messages in logs and banks and then publishes current banks to factions',
+    description: 'toggles the draft either active or disabled',
     execute(message, args) {
 
         let senderJob = functions.jobCheck(message.member)
@@ -24,7 +24,7 @@ module.exports = {
                 clearInterval(runningDraft);
                 runningDraft = false;
                 channel = message.client.channels.cache.get(draftAnnouncement);
-                channel.send("```CSS Round " + draftRound + " Complete. \n```");
+                channel.send("```CSS\n Round " + draftRound + " Complete. \n```");
                 console.log("Round " + draftRound + " Complete.")
                 draftRound++;
                 draftPick--;
@@ -54,7 +54,7 @@ module.exports = {
             runningDraft = setInterval(myFunction, thirtySec);
             message.reply("```CSS\n Drafting is now live! \n```");
             channel = message.client.channels.cache.get(draftAnnouncement);
-            channel.send("```CSS\n Drafting is now live! \n```");
+            channel.send("```CSS\n Drafting is now [live!] \n```");
             console.log("Draft Started!!")
         }//if (!runningDraft)
         else{
@@ -63,8 +63,8 @@ module.exports = {
             draftPick--;
             functions.updateDraftPickNo();
             channel = message.client.channels.cache.get(draftAnnouncement);
-            message.reply("```CSS\nDrafting has been suspended!\n```");
-            channel.send("```CSS\nDrafting has been suspended!\n```");
+            message.reply("```CSS\nDrafting has been [suspended!]\n```");
+            channel.send("```CSS\nDrafting has been [suspended!]\n```");
             console.log("Draft Stopped!!")
         }
 
