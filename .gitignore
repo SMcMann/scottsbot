@@ -268,3 +268,4 @@ node_modules/is-stream/license
 node_modules/is-stream/package.json
 node_modules/is-stream/readme.md
 config.json
+token.json
