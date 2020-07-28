@@ -10,6 +10,10 @@ module.exports = class Team {
         this.tag = team.tag;
         this.cashCoordinates = team.cashCoordinates;
         this.statTokens = team.statTokens;
+        this.bonusTokens = team.bonusTokens;
+        this.athletes = team.athletes;
+        this.coachBid = team.coachBid; //coach name and $ amount
+        this.coach = team.coach;
         //this.startupCoordinates = team.startupCoordinates;
         /*
         */

@@ -15,7 +15,7 @@ module.exports = class Athlete {
         this.Doctor_Notes = athlete.Doctor_Notes;
         this.Williams_Ratio = athlete.Williams_Ratio;
         this.Last_Season_Highlight = athlete.Last_Season_Highlight;
-
+        this.athleteID = athlete.athleteID;
     }
 
     

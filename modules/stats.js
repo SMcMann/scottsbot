@@ -10,7 +10,7 @@ module.exports = class Stats {
         this.frv = stats.frv;
 
     }
-    getGOS(tag){
+    getGOS(tag){ //update this with all teams AND make it a switch statement you neanderthal
         if (tag === BJU.tag) return this.bju;
         else if (tag === MM.tag) return this.mm;
         else if (tag === OSU.tag) return this.osu;

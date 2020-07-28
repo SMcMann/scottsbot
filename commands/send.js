@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const Team = require('../modules/team.js')
 const functions = require('./functions.js')
 const test = require('../modules/startupData.js')
@@ -10,22 +9,34 @@ module.exports = {
     guildOnly: true,
     args: true,
     usage: '<@target> <amount>',
-    execute(message, args) {
+    async execute(message, args) {
 
+        message.channel.send('```CSS\nWorking...\n```');
+    
         let senderClass = functions.searchID(message.member);
-        let senderJob = functions.jobCheck(message.member)
-
-        if (senderJob != "Owner"){
-            throw "```CSS\nYou must be an Owner to manage your team's finances\n```"
+        if (!senderClass){
+            return message.reply("```css\nYou do not have a valid role\n```")
         }
 
-        const user = message.member.displayName        
+
+        let superComputer = message.member.roles.cache.some((r) => r.name === "Supercomputer")
+        let senderJob = message.member.roles.cache.some((r) => r.name === "Owner")
+
+
+        if (!senderJob){
+            message.reply("```CSS\nYou must be an Owner to manage your team's finances\n```")
+            return;
+        }
+        
+        var cash;
+        const user1 = message.member.displayName        
         var recieverClass;
 
-        //grabs the first mention in a command, otherwise should be undefined
+        /*grabs the first mention in a command, otherwise should be undefined NO LONGER USED
         let x = message.mentions.members.first();
         if (x)
             recieverClass = functions.searchIDProto(x)
+        */
 
         //checks each arguement provided, and if there is a valid target accepts it. Otherwise break off throwing error
         if (!recieverClass){
@@ -35,48 +46,68 @@ module.exports = {
             recieverClass = functions.protoValidateTarget(args[1]);
         }
         if (!recieverClass){
-            throw "```CSS\nNo vailid target found\n```"
+            message.reply("```CSS\nNo vailid target found\n```");
+            return;
         }
 
         //stops user from trying to send themselves their own resources
-        if (recieverClass === senderClass)
-            throw "```CSS\nYou cannot send resources to yourself!\n```"
+        if (recieverClass === senderClass){
+            message.reply("```CSS\nYou cannot send resources to yourself!\n```");
+            return;
+        }
+            
 
         //checks all arguements to see if there is a valid int provided, then saves it in "amount"
         var amount;
         if (Number.isInteger(parseInt(args[0])))
-            amount = args[0];
+            amount = parseInt(args[0]);
         else if (Number.isInteger(parseInt(args[1])))
-            amount = args[1];
-        if (!amount)    
-            throw "```CSS\nYou did not provide a valid amount\n```"
+            amount = parseInt(args[1]);
+        if (!amount){
+            message.reply("```CSS\nYou did not provide a valid amount\n```") 
+            return;   
+        }    
+
 
         //no negative or 0 amounts allowed (no robbery)
-        if (amount <= 0)
-            throw "```CSS\nMust enter amount greater than 0\n```"
+        if (amount <= 0){
+            message.reply("```CSS\nMust enter amount greater than 0\n```");
+            return;
+        }
 
         //lastly checks to see if sender has the correct amount of resources
-        let valid = senderClass.checkAmount(amount, "zillions");
-        if (!valid)
-            throw ("```CSS\nYou do not have enough cash to send\n```");
-
-        
-
-        message.reply('```CSS\nSend ' + amount + " zillion to " + recieverClass.fName +'? \nConfirm with a thumb up or cancel with a thumb down.\n```');
-    
+        try { 
+            cash = await functions.getCellValue(senderClass)            
+        } catch (error) {
+            console.log("Oh shit something wen wrong with a !send command)")
+            message.reply("```CSS\nAn error has occurred with this command, please contact control or try again later\n```");
+            return;
+        }
+        if (cash < amount || !cash){
+            message.reply("```CSS\nYou do not have enough cash to send\n```");
+            return;
+        }
+            
+        let msg = await message.reply('```CSS\nSend ' + amount + " zillion to " + recieverClass.fName +'? \nConfirm with a thumb up or cancel with a thumb down.\n```');
         // Reacts so the user only have to click the emojis
-        message.react('👍').then(r => {
-                message.react('👎');
-        });
+        await msg.react("👍")
+        await msg.react("👎")
         
         // First argument is a filter function
-        message.awaitReactions((reaction, user) => user.id == message.author.id && (reaction.emoji.name == '👍' || reaction.emoji.name == '👎'),
-                { max: 1, time: 10000 }).then(collected => {
+        msg.awaitReactions((reaction, user) => user.id === message.author.id && (reaction.emoji.name == '👍' || reaction.emoji.name == '👎'),
+                { max: 1, time: 15000 }).then(collected => {
                         if (collected.first().emoji.name == '👍') {
-                             //the actual exchange of resources  
-
+                             //update local data for sake of keeping players in loop
                             senderClass.outgoing(parseInt(amount), "zillions"); 
-                            recieverClass.incoming(parseInt(amount), "zillions");
+                            recieverClass.incoming(parseInt(amount), "zillions");  
+
+                            //update google spreadsheets
+                            try{
+                                functions.updateCashSpreadsheet(senderClass, recieverClass, parseInt(amount));                               
+                            }
+                            catch {
+                                console.log("error with sheets")
+                            }
 
                             //reply to sender confirmation
                             message.reply("```CSS\nSent " + amount + " zillion to " + recieverClass.fName + "\n```");
@@ -84,172 +115,35 @@ module.exports = {
                             //update whoever recieved the resource in their log channel 
                             var channel = message.client.channels.cache.get(recieverClass.logID);
                             channel.send("```CSS\n[" + 
-                                user + `] sent you: ` + amount + " zillion\n```" 
+                            user1 + `] sent you: ` + amount + " zillion\n```" 
                             );
                             //UPDATE BANK INFO FOR RECIEVER
                             channel = message.client.channels.cache.get(recieverClass.bankID);
                             channel.bulkDelete(2);
 
-                            var exampleEmbed = functions.newEmbed(recieverClass);
+                            var exampleEmbed = functions.createAssetsMessage(recieverClass);
 
                             //Update sender bank
-                            channel.send({ embed: exampleEmbed });
+                            channel.send(exampleEmbed);
                             
                             channel = message.client.channels.cache.get(senderClass.bankID);
                             channel.bulkDelete(2);
 
-                            exampleEmbed = functions.newEmbed(senderClass);
+                            exampleEmbed = functions.createAssetsMessage(senderClass);
 
-                            channel.send({ embed: exampleEmbed });
+                            channel.send(exampleEmbed);
 
                             channel = message.client.channels.cache.get(senderClass.logID);
-                            channel.send("```CSS\n[" + user + "] sent " + recieverClass.fName + " " + amount + " zillion \n```");
-
-                            //update google spreadsheets
-                            try{
-                             functions.updateCashSpreadsheet(senderClass, recieverClass, parseInt(amount));                               
-                            }
-                            catch {
-                                console.log("error with sheets")
-                            }
-
-                            
+                            channel.send("```CSS\n[" + user1 + "] sent " + recieverClass.fName + " " + amount + " zillion \n```");
+                           
                         }//if thumbs up
                         else
-                                message.reply('Operation canceled.');
+                                message.reply('```css\nOperation canceled.\n```');
                 }).catch(() => {
-                        message.reply('```CSS\nNo reaction after 10 seconds, operation canceled\n```');
+                        message.reply('```CSS\nNo reaction after 15 seconds, operation canceled\n```');
                 });
     
     }//execute
 
 }
 
-=======
-const Nation = require('../modules/nation.js')
-const functions = require('./functions.js')
-const test = require('../modules/startupData.js')
-
-module.exports = {
-    name: 'send',
-    cooldown: 5,
-    description: 'Send resources to other factions',
-    guildOnly: true,
-    args: true,
-    usage: '<@target> <amount> <resource type>',
-    execute(message, args) {
-
-        let senderClass = functions.serachID(message.member);
-        const user = message.member.displayName        
-        var recieverClass;
-        
-        //grabs the first mention in a command, otherwise should be undefined
-        let x = message.mentions.members.first();
-        if (x)
-            recieverClass = functions.searchIDProto(x)
-
-        //checks each arguement provided, and if it is a valid resource accepts it. Otherwise break off throwing error
-        var resource= functions.protoValidateResource(args[0]);   
-        if (!resource){
-            resource = functions.protoValidateResource(args[1])
-        }
-        if (!resource){
-            resource = functions.protoValidateResource(args[2])
-        }
-        if (!resource){
-            throw "No vailid resource found"
-        }
-
-        //checks each arguement provided, and if there is a valid target accepts it. Otherwise break off throwing error
-        if (!recieverClass){
-            recieverClass = functions.protoValidateTarget(args[0]);
-        }
-        if (!recieverClass){
-            recieverClass = functions.protoValidateTarget(args[1]);
-        }
-        if (!recieverClass){
-            recieverClass = functions.protoValidateTarget(args[2]);
-        }
-        if (!recieverClass){
-            throw "No vailid target found"
-        }
-
-        //stops user from trying to send themselves their own resources
-        if (recieverClass === senderClass)
-            throw "You cannot send resources to yourself!"
-
-        //checks all arguements to see if there is a valid int provided, then saves it in "amount"
-        var amount;
-        if (Number.isInteger(parseInt(args[0])))
-            amount = args[0];
-        else if (Number.isInteger(parseInt(args[1])))
-            amount = args[1];
-        else if (Number.isInteger(parseInt(args[2])))
-            amount = args[2];  
-        if (!amount)    
-            throw "You did not provide a valid amount"
-
-        //no negative or 0 amounts allowed (no robbery)
-        if (amount <= 0)
-            throw "Must enter amount greater than 0"
-
-        //lastly checks to see if sender has the correct amount of resources
-        let valid = senderClass.checkAmount(amount, resource);
-        if (!valid)
-            throw ("You do not have enough " + resource + " to send");
-
-        
-
-        message.reply('Send ' + amount + " " + resource + " to " + recieverClass.fName +'? \nConfirm with a thumb up or cancel with a thumb down.');
-    
-        // Reacts so the user only have to click the emojis
-        message.react('👍').then(r => {
-                message.react('👎');
-        });
-        
-        // First argument is a filter function
-        message.awaitReactions((reaction, user) => user.id == message.author.id && (reaction.emoji.name == '👍' || reaction.emoji.name == '👎'),
-                { max: 1, time: 10000 }).then(collected => {
-                        if (collected.first().emoji.name == '👍') {
-                             //the actual exchange of resources   
-                            senderClass.outgoing(parseInt(amount), resource); // 
-                            recieverClass.incoming(parseInt(amount), resource);
-                            //reply to sender confirmation
-                            message.reply("Sent " + amount + " " + resource + " to " + recieverClass.fName);
-
-                            //update whoever recieved the resource in their log channel 
-                            var channel = message.client.channels.cache.get(recieverClass.logID);
-                            channel.send(
-                                user + ` sent you: ` + amount + " " + resource
-                            );
-                            //UPDATE BANK INFO FOR RECIEVER
-                            channel = message.client.channels.cache.get(recieverClass.bankID);
-                            channel.bulkDelete(2);
-
-                            var exampleEmbed = functions.newEmbed(recieverClass);
-
-                            //Update sender bank
-                            channel.send({ embed: exampleEmbed });
-                            
-                            channel = message.client.channels.cache.get(senderClass.bankID);
-                            channel.bulkDelete(2);
-
-                            exampleEmbed = functions.newEmbed(senderClass);
-
-                            channel.send({ embed: exampleEmbed });
-
-                            channel = message.client.channels.cache.get(senderClass.logID);
-                            channel.send(user + " sent " + recieverClass.fName + " " + amount + " " + resource);
-                            
-                        }//if thumbs up
-                        else
-                                message.reply('Operation canceled.');
-                }).catch(() => {
-                        message.reply('No reaction after 10 seconds, operation canceled');
-                });
-    
-    }//execute
-
-}
-
->>>>>>> 84613f9f109a4cc31705c27d62873802deb5d229

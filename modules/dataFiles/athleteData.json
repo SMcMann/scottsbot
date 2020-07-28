@@ -14,7 +14,8 @@
   "Chakra": "Throat",
   "Doctor_Notes": "Allergic to Mold",
   "Williams_Ratio": "5/6",
-  "Last_Season_Highlight": "Accepting my mutant son for who he is"
+  "Last_Season_Highlight": "Accepting my mutant son for who he is",
+  "athleteID": 1
 },
 "2" : {
   "Name": "Deneen Farless",
@@ -31,7 +32,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "exhaustive pathophysiological cascade",
   "Williams_Ratio": "3/10",
-  "Last_Season_Highlight": "Having a baby boy"
+  "Last_Season_Highlight": "Having a baby boy",
+  "athleteID": 2
 },
 "3" : {
   "Name": "Darshana Quinton",
@@ -48,7 +50,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "constrained chromatin traffic",
   "Williams_Ratio": "2/5",
-  "Last_Season_Highlight": "Early morning nitzche debates with my teammates"
+  "Last_Season_Highlight": "Early morning nitzche debates with my teammates",
+  "athleteID": 3
 },
 "4" : {
   "Name": "Bạch Trí Thắng",
@@ -65,7 +68,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "Allergic to Latex",
   "Williams_Ratio": "3/4",
-  "Last_Season_Highlight": "Resurrecting and organizing Swamp Football for the Highland Games"
+  "Last_Season_Highlight": "Resurrecting and organizing Swamp Football for the Highland Games",
+  "athleteID": 4
 },
 "5" : {
   "Name": "Katherin Coffin",
@@ -82,7 +86,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "correlated prostatic homologues",
   "Williams_Ratio": "1/5",
-  "Last_Season_Highlight": "Winning the local mayor's race for my hometown"
+  "Last_Season_Highlight": "Winning the local mayor's race for my hometown",
+  "athleteID": 5
 },
 "6" : {
   "Name": "Monnie Grieves",
@@ -99,7 +104,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "generic mislocation of methodologies",
   "Williams_Ratio": "1/6",
-  "Last_Season_Highlight": "Ripping a guy's robo-arm off"
+  "Last_Season_Highlight": "Ripping a guy's robo-arm off",
+  "athleteID": 6
 },
 "7" : {
   "Name": "Hou Mo-La",
@@ -116,7 +122,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "proper fatty-acid neurotrophins",
   "Williams_Ratio": "1/6",
-  "Last_Season_Highlight": "Definitely the riot at the Beast-of-the-East showdown. That was so fun!"
+  "Last_Season_Highlight": "Definitely the riot at the Beast-of-the-East showdown. That was so fun!",
+  "athleteID": 7
 },
 "8" : {
   "Name": "Chao Hsa",
@@ -133,7 +140,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "strategic homologues equal",
   "Williams_Ratio": "3/10",
-  "Last_Season_Highlight": "Becoming a Master Sommelier"
+  "Last_Season_Highlight": "Becoming a Master Sommelier",
+  "athleteID": 8
 },
 "9" : {
   "Name": "Angie Nealey",
@@ -150,7 +158,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "increased deleterious chains",
   "Williams_Ratio": "5/6",
-  "Last_Season_Highlight": "Leading the peace discussions after the 'Animal Birthday' incident. The agreement is tenuous. I hope cooler heas prevail."
+  "Last_Season_Highlight": "Leading the peace discussions after the 'Animal Birthday' incident. The agreement is tenuous. I hope cooler heas prevail.",
+  "athleteID": 9
 },
 "10" : {
   "Name": "Carlisle Sybille",
@@ -167,7 +176,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "incubate medical mechanisms",
   "Williams_Ratio": "1/4",
-  "Last_Season_Highlight": "Winning the Rival Game"
+  "Last_Season_Highlight": "Winning the Rival Game",
+  "athleteID": 10
 },
 "11" : {
   "Name": "Ali Ameqran",
@@ -184,7 +194,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "Allergic to Eggs",
   "Williams_Ratio": "3/4",
-  "Last_Season_Highlight": "Watching my Daughter get second at the Highland Games in the Log Toss"
+  "Last_Season_Highlight": "Watching my Daughter get second at the Highland Games in the Log Toss",
+  "athleteID": 11
 },
 "12" : {
   "Name": "Lê Ðức Phi",
@@ -201,7 +212,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "inactive multi-potentiality temperatures",
   "Williams_Ratio": "3/4",
-  "Last_Season_Highlight": "Winning against those Space Cricket losers at beer pong at Animal's Birthday Party."
+  "Last_Season_Highlight": "Winning against those Space Cricket losers at beer pong at Animal's Birthday Party.",
+  "athleteID": 12
 },
 "13" : {
   "Name": "Mo Mao",
@@ -218,7 +230,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "inactive brand-A interaction",
   "Williams_Ratio": "4/5",
-  "Last_Season_Highlight": "Busting the skull of my rival on Anaheim VC"
+  "Last_Season_Highlight": "Busting the skull of my rival on Anaheim VC",
+  "athleteID": 13
 },
 "14" : {
   "Name": "Arminda Shor",
@@ -235,7 +248,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "Peanut Allergy",
   "Williams_Ratio": "2/5",
-  "Last_Season_Highlight": "That time I tackled the Captain of Mexico City. BAM!"
+  "Last_Season_Highlight": "That time I tackled the Captain of Mexico City. BAM!",
+  "athleteID": 14
 },
 "15" : {
   "Name": "Shoshana Pixler",
@@ -252,7 +266,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "ectopic downstream evolution",
   "Williams_Ratio": "4/5",
-  "Last_Season_Highlight": "Achieving the under 3 minute mile."
+  "Last_Season_Highlight": "Achieving the under 3 minute mile.",
+  "athleteID": 15
 },
 "16" : {
   "Name": "Nila Strum",
@@ -269,7 +284,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "triplex deleterious potential",
   "Williams_Ratio": "1/4",
-  "Last_Season_Highlight": "Punching 'Thunder' really hard"
+  "Last_Season_Highlight": "Punching 'Thunder' really hard",
+  "athleteID": 16
 },
 "17" : {
   "Name": "Odell Estabrook",
@@ -286,7 +302,8 @@
   "Chakra": "Throat",
   "Doctor_Notes": "ectopic brand-A phenotypes",
   "Williams_Ratio": "1/5",
-  "Last_Season_Highlight": "Graduating college"
+  "Last_Season_Highlight": "Graduating college",
+  "athleteID": 17
 },
 "18" : {
   "Name": "Velva Gast",
@@ -303,7 +320,8 @@
   "Chakra": "Throat",
   "Doctor_Notes": "ubiquitous helix-helix transcriptome",
   "Williams_Ratio": "3/10",
-  "Last_Season_Highlight": "Summiting K9"
+  "Last_Season_Highlight": "Summiting K9",
+  "athleteID": 18
 },
 "19" : {
   "Name": "Hou Hu-Siu",
@@ -320,7 +338,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "concentrated sequence mediation",
   "Williams_Ratio": "5/6",
-  "Last_Season_Highlight": "Deciphering who attempted to assassinate the Commissioner last season."
+  "Last_Season_Highlight": "Deciphering who attempted to assassinate the Commissioner last season.",
+  "athleteID": 19
 },
 "20" : {
   "Name": "Cameron Anthony",
@@ -337,7 +356,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "von-Wille prokaryotic radicals",
   "Williams_Ratio": "1/5",
-  "Last_Season_Highlight": "Sponsoing my neighborhood's plucky youth team"
+  "Last_Season_Highlight": "Sponsoing my neighborhood's plucky youth team",
+  "athleteID": 20
 },
 "21" : {
   "Name": "Emmanuel Alers",
@@ -354,7 +374,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "concentrated diesel-warrens' correlation",
   "Williams_Ratio": "5/6",
-  "Last_Season_Highlight": "Solving my 'Home Mortage' problem with lots of punching. [NOTE FROM THE STATE LIASON: If anybody has any information on this, report to the Government Office of Sports Oversight immediately]"
+  "Last_Season_Highlight": "Solving my 'Home Mortage' problem with lots of punching. [NOTE FROM THE STATE LIASON: If anybody has any information on this, report to the Government Office of Sports Oversight immediately]",
+  "athleteID": 21
 },
 "22" : {
   "Name": "Atoyacoatl",
@@ -371,7 +392,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "bacterial prostatic potential",
   "Williams_Ratio": "1/6",
-  "Last_Season_Highlight": "Opening up a Youth Outreach program"
+  "Last_Season_Highlight": "Opening up a Youth Outreach program",
+  "athleteID": 22
 },
 "23" : {
   "Name": "Damaris Simmons",
@@ -388,7 +410,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "inactive downstream neurotrophins",
   "Williams_Ratio": "2/5",
-  "Last_Season_Highlight": "Beating up the Space Cricket Spies who showed up to Animal's Birthday Party"
+  "Last_Season_Highlight": "Beating up the Space Cricket Spies who showed up to Animal's Birthday Party",
+  "athleteID": 23
 },
 "24" : {
   "Name": "Girgis Hajji",
@@ -405,7 +428,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "Peanut Allergy",
   "Williams_Ratio": "2/5",
-  "Last_Season_Highlight": "Winning the Division Championship"
+  "Last_Season_Highlight": "Winning the Division Championship",
+  "athleteID": 24
 },
 "25" : {
   "Name": "Adin Molipetl",
@@ -422,7 +446,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "aggregated genome-wide chromatin",
   "Williams_Ratio": "4/5",
-  "Last_Season_Highlight": "Watching my Son get Bronze in the Spacewater Polo Olympic tournament"
+  "Last_Season_Highlight": "Watching my Son get Bronze in the Spacewater Polo Olympic tournament",
+  "athleteID": 25
 },
 "26" : {
   "Name": "Stephane Mazon",
@@ -439,7 +464,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "generic dichroitic fatty-acids",
   "Williams_Ratio": "1/6",
-  "Last_Season_Highlight": "Sucker Punching the Lifestyle Coach of Mexico City"
+  "Last_Season_Highlight": "Sucker Punching the Lifestyle Coach of Mexico City",
+  "athleteID": 26
 },
 "27" : {
   "Name": "Burma Priddy",
@@ -456,7 +482,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "correlated potential-dependent intake",
   "Williams_Ratio": "3/5",
-  "Last_Season_Highlight": "Delivering the graduation speech at my old fleet academy"
+  "Last_Season_Highlight": "Delivering the graduation speech at my old fleet academy",
+  "athleteID": 27
 },
 "28" : {
   "Name": "Hou Li",
@@ -473,7 +500,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "ectopic bilayer toxicity",
   "Williams_Ratio": "4/5",
-  "Last_Season_Highlight": "Breaking T-Rex's arm. He was a good sport about it."
+  "Last_Season_Highlight": "Breaking T-Rex's arm. He was a good sport about it.",
+  "athleteID": 28
 },
 "29" : {
   "Name": "Chou Qiu-Su",
@@ -490,7 +518,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "viable energetic polyphenism",
   "Williams_Ratio": "3/10",
-  "Last_Season_Highlight": "Raiding the local Space Cricket team's locker room, stealing all of their left shoes, and then lighting them on fire."
+  "Last_Season_Highlight": "Raiding the local Space Cricket team's locker room, stealing all of their left shoes, and then lighting them on fire.",
+  "athleteID": 29
 },
 "30" : {
   "Name": "Aurelio Person",
@@ -507,7 +536,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "triplex liver development",
   "Williams_Ratio": "5/6",
-  "Last_Season_Highlight": "Participating in my first Extreme Ironing Competition"
+  "Last_Season_Highlight": "Participating in my first Extreme Ironing Competition",
+  "athleteID": 30
 },
 "31" : {
   "Name": "Raphael Garceau",
@@ -524,7 +554,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "meso-scale loop down-regulation",
   "Williams_Ratio": "1/4",
-  "Last_Season_Highlight": "Foiling the assissination attempt on the Commissioner last year via fist fight in the rafters of the Yearly League Roast."
+  "Last_Season_Highlight": "Foiling the assissination attempt on the Commissioner last year via fist fight in the rafters of the Yearly League Roast.",
+  "athleteID": 31
 },
 "32" : {
   "Name": "Brock Haney",
@@ -541,7 +572,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "novel epigenetic migration",
   "Williams_Ratio": "3/5",
-  "Last_Season_Highlight": "My family's yearly rubgy game. Watch out Uncle Mark! I'm coming for you next year!"
+  "Last_Season_Highlight": "My family's yearly rubgy game. Watch out Uncle Mark! I'm coming for you next year!",
+  "athleteID": 32
 },
 "33" : {
   "Name": "Miya Benitez",
@@ -558,7 +590,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "long-term strand-asymmetric traffic",
   "Williams_Ratio": "5/6",
-  "Last_Season_Highlight": "Winning the Beast-of-the-East Rivalry Game"
+  "Last_Season_Highlight": "Winning the Beast-of-the-East Rivalry Game",
+  "athleteID": 33
 },
 "34" : {
   "Name": "Adis Kinova",
@@ -575,7 +608,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "differential cloning chelators",
   "Williams_Ratio": "3/4",
-  "Last_Season_Highlight": "Inventing and organizing the first ever Octathelon"
+  "Last_Season_Highlight": "Inventing and organizing the first ever Octathelon",
+  "athleteID": 34
 },
 "35" : {
   "Name": "Phylicia Forbush",
@@ -592,7 +626,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "Allergic to Cats",
   "Williams_Ratio": "1/2",
-  "Last_Season_Highlight": "Winning the International Rival Expedition Game"
+  "Last_Season_Highlight": "Winning the International Rival Expedition Game",
+  "athleteID": 35
 },
 "36" : {
   "Name": "Hui Fa-Chi",
@@ -609,7 +644,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "epigenetic pituitary glanding",
   "Williams_Ratio": "1/6",
-  "Last_Season_Highlight": "Having a sixth baby"
+  "Last_Season_Highlight": "Having a sixth baby",
+  "athleteID": 36
 },
 "37" : {
   "Name": "Dai An-Xu",
@@ -626,7 +662,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "Severe Peanut Allergy",
   "Williams_Ratio": "3/4",
-  "Last_Season_Highlight": "Definitely Animal's Birthday Bash - that guy know how to Party"
+  "Last_Season_Highlight": "Definitely Animal's Birthday Bash - that guy know how to Party",
+  "athleteID": 37
 },
 "38" : {
   "Name": "Vania Blazek",
@@ -643,7 +680,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "non-toxic redox undefined",
   "Williams_Ratio": "2/5",
-  "Last_Season_Highlight": "Getting married"
+  "Last_Season_Highlight": "Getting married",
+  "athleteID": 38
 },
 "39" : {
   "Name": "Sái Lâm Dũng",
@@ -660,7 +698,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "von-Wille tactical neurotrophins",
   "Williams_Ratio": "1/4",
-  "Last_Season_Highlight": "Winning the League Championship"
+  "Last_Season_Highlight": "Winning the League Championship",
+  "athleteID": 39
 },
 "40" : {
   "Name": "Elinore Maiorano",
@@ -677,7 +716,8 @@
   "Chakra": "Throat",
   "Doctor_Notes": "basal epigenetic relationships",
   "Williams_Ratio": "1/4",
-  "Last_Season_Highlight": "Finalling opening up to my parents"
+  "Last_Season_Highlight": "Finalling opening up to my parents",
+  "athleteID": 40
 },
 "41" : {
   "Name": "Irvin Jasmin",
@@ -694,7 +734,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "chronic agonist-activated agents",
   "Williams_Ratio": "2/5",
-  "Last_Season_Highlight": "Winning the International Rival Expedition Game"
+  "Last_Season_Highlight": "Winning the International Rival Expedition Game",
+  "athleteID": 41
 },
 "42" : {
   "Name": "Placide Mylène",
@@ -711,7 +752,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "Peanut Allergy",
   "Williams_Ratio": "1/4",
-  "Last_Season_Highlight": "Burning down the Great Lakers' old storage facility to keep Johannesburg from getting the stuff during the move."
+  "Last_Season_Highlight": "Burning down the Great Lakers' old storage facility to keep Johannesburg from getting the stuff during the move.",
+  "athleteID": 42
 },
 "43" : {
   "Name": "Flavia Edward",
@@ -728,7 +770,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "polarised evolutionary agents",
   "Williams_Ratio": "3/10",
-  "Last_Season_Highlight": "Paying off my family's student loans"
+  "Last_Season_Highlight": "Paying off my family's student loans",
+  "athleteID": 43
 },
 "44" : {
   "Name": "Cheryle Trautman",
@@ -745,7 +788,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "Allergic to Dairy",
   "Williams_Ratio": "3/5",
-  "Last_Season_Highlight": "Winning the League Championship"
+  "Last_Season_Highlight": "Winning the League Championship",
+  "athleteID": 44
 },
 "45" : {
   "Name": "Billy Mays",
@@ -762,7 +806,8 @@
   "Chakra": "Throat",
   "Doctor_Notes": "Peanut Allergy",
   "Williams_Ratio": "3/4",
-  "Last_Season_Highlight": "Losing to my Great Grandpa at pool by only one ball [NOTE FROM THE GOVERNMENT LIASON: we're pretty sure the Great Grandpa (codename 'Papabear') cheats frequently. Investigation underway.)"
+  "Last_Season_Highlight": "Losing to my Great Grandpa at pool by only one ball [NOTE FROM THE GOVERNMENT LIASON: we're pretty sure the Great Grandpa (codename 'Papabear') cheats frequently. Investigation underway.)",
+  "athleteID": 45
 },
 "46" : {
   "Name": "Ti Bao",
@@ -779,7 +824,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "epigenetic proton dismustase",
   "Williams_Ratio": "1/6",
-  "Last_Season_Highlight": "Winning the Hunred Years' War Rivalry Game"
+  "Last_Season_Highlight": "Winning the Hunred Years' War Rivalry Game",
+  "athleteID": 46
 },
 "47" : {
   "Name": "Vũ Anh Tùng",
@@ -796,7 +842,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "Extremely flexible hormones",
   "Williams_Ratio": "4/5",
-  "Last_Season_Highlight": "Throwing one hell of a birthday"
+  "Last_Season_Highlight": "Throwing one hell of a birthday",
+  "athleteID": 47
 },
 "48" : {
   "Name": "Sai Zhuo-Na",
@@ -813,7 +860,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "inactive non-permissive phosphorylation",
   "Williams_Ratio": "3/10",
-  "Last_Season_Highlight": "Competing in the Tour de' France"
+  "Last_Season_Highlight": "Competing in the Tour de' France",
+  "athleteID": 48
 },
 "49" : {
   "Name": "Jonathan Touchette",
@@ -830,7 +878,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "equal arrayed co-factors",
   "Williams_Ratio": "3/5",
-  "Last_Season_Highlight": "The car chase and fist fight which followed my dramatic refusal to the Space Cricket League's offer to be a corporate spy down."
+  "Last_Season_Highlight": "The car chase and fist fight which followed my dramatic refusal to the Space Cricket League's offer to be a corporate spy down.",
+  "athleteID": 49
 },
 "50" : {
   "Name": "Lee Xue",
@@ -847,7 +896,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "cultivated strategic biomarkers",
   "Williams_Ratio": "1/4",
-  "Last_Season_Highlight": "Winning the Big Guns Rivalry Game"
+  "Last_Season_Highlight": "Winning the Big Guns Rivalry Game",
+  "athleteID": 50
 },
 "51" : {
   "Name": "Latrice Bramble",
@@ -864,7 +914,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "limited eukaryotic conductance",
   "Williams_Ratio": "1/2",
-  "Last_Season_Highlight": "Getting into a fight at Animal's Birthday Party"
+  "Last_Season_Highlight": "Getting into a fight at Animal's Birthday Party",
+  "athleteID": 51
 },
 "52" : {
   "Name": "Waltraud Kahre",
@@ -881,7 +932,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "low agonist-activated physiology",
   "Williams_Ratio": "3/10",
-  "Last_Season_Highlight": "Lighting the Olympic Torch"
+  "Last_Season_Highlight": "Lighting the Olympic Torch",
+  "athleteID": 52
 },
 "53" : {
   "Name": "Duane Hemingway",
@@ -898,7 +950,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "triplex operational dysfunction",
   "Williams_Ratio": "3/10",
-  "Last_Season_Highlight": "Skiing New Everest"
+  "Last_Season_Highlight": "Skiing New Everest",
+  "athleteID": 53
 },
 "54" : {
   "Name": "Võ Minh Huy",
@@ -915,7 +968,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "protein-protein migration dysfunction",
   "Williams_Ratio": "1/6",
-  "Last_Season_Highlight": "Sailing around the world"
+  "Last_Season_Highlight": "Sailing around the world",
+  "athleteID": 54
 },
 "55" : {
   "Name": "Melvin Wilford",
@@ -932,7 +986,8 @@
   "Chakra": "Throat",
   "Doctor_Notes": "cultivated ubiquitous neurotrophins",
   "Williams_Ratio": "1/6",
-  "Last_Season_Highlight": "Shooting [later acquited for reasons of self-defense] the Space Cricket Spy who was trying to kidnap my Daughter"
+  "Last_Season_Highlight": "Shooting [later acquited for reasons of self-defense] the Space Cricket Spy who was trying to kidnap my Daughter",
+  "athleteID": 55
 },
 "56" : {
   "Name": "Eudoxe Massé",
@@ -949,7 +1004,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "comprehensive promoter epidemiology",
   "Williams_Ratio": "1/2",
-  "Last_Season_Highlight": "Vigilante justice against the guy who was forging my signature on sports memorabilia"
+  "Last_Season_Highlight": "Vigilante justice against the guy who was forging my signature on sports memorabilia",
+  "athleteID": 56
 },
 "57" : {
   "Name": "Muslih Khatibi",
@@ -966,7 +1022,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "high loop muscle conditioning",
   "Williams_Ratio": "1/4",
-  "Last_Season_Highlight": "Having 'the kid' get into college"
+  "Last_Season_Highlight": "Having 'the kid' get into college",
+  "athleteID": 57
 },
 "58" : {
   "Name": "Jeremy Pratte",
@@ -983,7 +1040,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "constrained conformational neurotrophins",
   "Williams_Ratio": "5/6",
-  "Last_Season_Highlight": "Successfully lobbying my environmental justice group to explore means of violent protests. ...[NOTE FROM THE STATE LIASON: This has been noted]…"
+  "Last_Season_Highlight": "Successfully lobbying my environmental justice group to explore means of violent protests. ...[NOTE FROM THE STATE LIASON: This has been noted]…",
+  "athleteID": 58
 },
 "59" : {
   "Name": "Mellissa Holloway",
@@ -1000,7 +1058,8 @@
   "Chakra": "Throat",
   "Doctor_Notes": "Allergic to Shellfish",
   "Williams_Ratio": "3/5",
-  "Last_Season_Highlight": "Winning the International Rival Expedition Game"
+  "Last_Season_Highlight": "Winning the International Rival Expedition Game",
+  "athleteID": 59
 },
 "60" : {
   "Name": "Aldo Carr",
@@ -1017,7 +1076,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "low DAPI-stained elucidation",
   "Williams_Ratio": "1/4",
-  "Last_Season_Highlight": "Winning a thrilling multi-million dollar poker match against last year's Space Cricket MVP"
+  "Last_Season_Highlight": "Winning a thrilling multi-million dollar poker match against last year's Space Cricket MVP",
+  "athleteID": 60
 },
 "61" : {
   "Name": "Vương Minh Trung",
@@ -1034,7 +1094,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "regular non-covalent conditions",
   "Williams_Ratio": "3/10",
-  "Last_Season_Highlight": "Winning MVP of team last season"
+  "Last_Season_Highlight": "Winning MVP of team last season",
+  "athleteID": 61
 },
 "62" : {
   "Name": "Zenobia Tischler",
@@ -1051,7 +1112,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "cultivated scattered polypeptide materials",
   "Williams_Ratio": "1/6",
-  "Last_Season_Highlight": "Winning the Spacecraft Carrier Design Competitive Grant Challenge."
+  "Last_Season_Highlight": "Winning the Spacecraft Carrier Design Competitive Grant Challenge.",
+  "athleteID": 62
 },
 "63" : {
   "Name": "Raquel Walk",
@@ -1068,7 +1130,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "concentrated pathophysiological transcriptome",
   "Williams_Ratio": "1/2",
-  "Last_Season_Highlight": "Baking the perfect cake for my cousin's wedding"
+  "Last_Season_Highlight": "Baking the perfect cake for my cousin's wedding",
+  "athleteID": 63
 },
 "64" : {
   "Name": "Devan Mcdaniel",
@@ -1085,7 +1148,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "correlated sequence homologues present",
   "Williams_Ratio": "2/5",
-  "Last_Season_Highlight": "Curling in the Olympics"
+  "Last_Season_Highlight": "Curling in the Olympics",
+  "athleteID": 64
 },
 "65" : {
   "Name": "Rocco Eisert",
@@ -1102,7 +1166,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "specific nascent agents",
   "Williams_Ratio": "3/10",
-  "Last_Season_Highlight": "Falling in love all over again"
+  "Last_Season_Highlight": "Falling in love all over again",
+  "athleteID": 65
 },
 "66" : {
   "Name": "Jackson Béland",
@@ -1119,7 +1184,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "ectopic coronal circuitry",
   "Williams_Ratio": "1/5",
-  "Last_Season_Highlight": "Bashing the Hoovercar of Angel, that guy gave me some very poor stock tips."
+  "Last_Season_Highlight": "Bashing the Hoovercar of Angel, that guy gave me some very poor stock tips.",
+  "athleteID": 66
 },
 "67" : {
   "Name": "Carolann Tokar",
@@ -1136,7 +1202,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "triplex cyclin-dependent membrane",
   "Williams_Ratio": "2/5",
-  "Last_Season_Highlight": "Punching the Head Commissioner of Space Cricket at a press conference. Got three years for that. Released after two weeks."
+  "Last_Season_Highlight": "Punching the Head Commissioner of Space Cricket at a press conference. Got three years for that. Released after two weeks.",
+  "athleteID": 67
 },
 "68" : {
   "Name": "Jacquelyne Batz",
@@ -1153,7 +1220,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "regular positive exon",
   "Williams_Ratio": "1/2",
-  "Last_Season_Highlight": "Returning the Salt Trophy to Mumbai (winning the Mumbai-London Rivalry Game)"
+  "Last_Season_Highlight": "Returning the Salt Trophy to Mumbai (winning the Mumbai-London Rivalry Game)",
+  "athleteID": 68
 },
 "69" : {
   "Name": "Ju Kai-Ru",
@@ -1170,7 +1238,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "Peanut Allergy",
   "Williams_Ratio": "2/5",
-  "Last_Season_Highlight": "Sponsoring my kid's private highschool's Dressage team. Go Cavaliers!"
+  "Last_Season_Highlight": "Sponsoring my kid's private highschool's Dressage team. Go Cavaliers!",
+  "athleteID": 69
 },
 "70" : {
   "Name": "Luo Pi",
@@ -1187,7 +1256,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "chronic flexible uncoupling",
   "Williams_Ratio": "4/5",
-  "Last_Season_Highlight": "Throwing up at the League's All-you-can-eat Sambusa Showdown for Charity"
+  "Last_Season_Highlight": "Throwing up at the League's All-you-can-eat Sambusa Showdown for Charity",
+  "athleteID": 70
 },
 "71" : {
   "Name": "Ngô Hữu Canh",
@@ -1204,7 +1274,8 @@
   "Chakra": "Third Eye",
   "Doctor_Notes": "exhaustive covalent methodologies = good",
   "Williams_Ratio": "3/4",
-  "Last_Season_Highlight": "Pushing that Space Cricket Spy into the pool as she was trying to spike the punch."
+  "Last_Season_Highlight": "Pushing that Space Cricket Spy into the pool as she was trying to spike the punch.",
+  "athleteID": 71
 },
 "72" : {
   "Name": "Ân Công Ân",
@@ -1221,7 +1292,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "incubate urinary kinase",
   "Williams_Ratio": "1/5",
-  "Last_Season_Highlight": "Raiding and burning down into the Great Lakers' old storage facility as they were moving to Johannesburg."
+  "Last_Season_Highlight": "Raiding and burning down into the Great Lakers' old storage facility as they were moving to Johannesburg.",
+  "athleteID": 72
 },
 "73" : {
   "Name": "Kacey Lozada",
@@ -1238,7 +1310,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "Allergic to Avacado",
   "Williams_Ratio": "1/4",
-  "Last_Season_Highlight": "Definitely Animal's Birthday Party. It was crazy! I threw a chair at one of those Space Cricket reps!"
+  "Last_Season_Highlight": "Definitely Animal's Birthday Party. It was crazy! I threw a chair at one of those Space Cricket reps!",
+  "athleteID": 73
 },
 "74" : {
   "Name": "Lindsey Lawson",
@@ -1255,7 +1328,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "Allergic to Cats, Dogs, and several cacti",
   "Williams_Ratio": "2/5",
-  "Last_Season_Highlight": "Beating up all those Space Cricket Representatives. They were nothing but bad news."
+  "Last_Season_Highlight": "Beating up all those Space Cricket Representatives. They were nothing but bad news.",
+  "athleteID": 74
 },
 "75" : {
   "Name": "Elena Seibold",
@@ -1272,7 +1346,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "correlated respiration circuitry",
   "Williams_Ratio": "3/4",
-  "Last_Season_Highlight": "Getting hired on as a Sports Commentator in the off-season"
+  "Last_Season_Highlight": "Getting hired on as a Sports Commentator in the off-season",
+  "athleteID": 75
 },
 "76" : {
   "Name": "Choo Su-Jiao",
@@ -1289,7 +1364,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "epigenetic logistical mutagenesis",
   "Williams_Ratio": "4/5",
-  "Last_Season_Highlight": "[coughs] Buying my own neon sign during the Beast-of-the-East riots."
+  "Last_Season_Highlight": "[coughs] Buying my own neon sign during the Beast-of-the-East riots.",
+  "athleteID": 76
 },
 "77" : {
   "Name": "Leia Gulledge",
@@ -1306,7 +1382,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "high repair recognition",
   "Williams_Ratio": "1/2",
-  "Last_Season_Highlight": "Starring in Sucker Punch. It didn't get good reviews but it made good dollars!"
+  "Last_Season_Highlight": "Starring in Sucker Punch. It didn't get good reviews but it made good dollars!",
+  "athleteID": 77
 },
 "78" : {
   "Name": "Jada Sybert",
@@ -1323,7 +1400,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "viable fatty-acid selectivity",
   "Williams_Ratio": "3/5",
-  "Last_Season_Highlight": "Winning the the Prized Duck Race at Animal's Birthday Party"
+  "Last_Season_Highlight": "Winning the the Prized Duck Race at Animal's Birthday Party",
+  "athleteID": 78
 },
 "79" : {
   "Name": "Coralie Schuch",
@@ -1340,7 +1418,8 @@
   "Chakra": "Root",
   "Doctor_Notes": "inactive fractal expenditures",
   "Williams_Ratio": "5/6",
-  "Last_Season_Highlight": "Playing my first game of Space Cricket."
+  "Last_Season_Highlight": "Playing my first game of Space Cricket.",
+  "athleteID": 79
 },
 "80" : {
   "Name": "Alphéat Gignac",
@@ -1357,7 +1436,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "engineered separation of dismustase",
   "Williams_Ratio": "1/6",
-  "Last_Season_Highlight": "Winning MVP of team last season"
+  "Last_Season_Highlight": "Winning MVP of team last season",
+  "athleteID": 80
 },
 "81" : {
   "Name": "Howie Indrajit",
@@ -1374,7 +1454,8 @@
   "Chakra": "Solar Plexus",
   "Doctor_Notes": "Allergic to Dogs",
   "Williams_Ratio": "5/6",
-  "Last_Season_Highlight": "Getting third place in the local pickup Spacewater Polo League"
+  "Last_Season_Highlight": "Getting third place in the local pickup Spacewater Polo League",
+  "athleteID": 81
 },
 "82" : {
   "Name": "Sari Khuko",
@@ -1391,7 +1472,8 @@
   "Chakra": "Heart",
   "Doctor_Notes": "de novo tissue hypotheosis",
   "Williams_Ratio": "4/5",
-  "Last_Season_Highlight": "Surfing in Supertubes in South Africa"
+  "Last_Season_Highlight": "Surfing in Supertubes in South Africa",
+  "athleteID": 82
 },
 "83" : {
   "Name": "Ludovic Gallant",
@@ -1408,7 +1490,8 @@
   "Chakra": "Throat",
   "Doctor_Notes": "triplex self-renewal kinases",
   "Williams_Ratio": "3/4",
-  "Last_Season_Highlight": "The Goodwill Space Crcket Game with the Space Cricket guys. It was good to see people come together."
+  "Last_Season_Highlight": "The Goodwill Space Crcket Game with the Space Cricket guys. It was good to see people come together.",
+  "athleteID": 83
 },
 "84" : {
   "Name": "Gu Hao-Qui",
@@ -1425,7 +1508,8 @@
   "Chakra": "Throat",
   "Doctor_Notes": "specific genome-wide phenotype",
   "Williams_Ratio": "1/5",
-  "Last_Season_Highlight": "Getting the first ever Full-Court Grand Slam in North American Breaketball"
+  "Last_Season_Highlight": "Getting the first ever Full-Court Grand Slam in North American Breaketball",
+  "athleteID": 84
 },
 "85" : {
   "Name": "Adam Charbonneau",
@@ -1442,7 +1526,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "viable fatty-acid plasticity",
   "Williams_Ratio": "4/5",
-  "Last_Season_Highlight": "Winning the League All-you-can-eat sambusa showdown for charity"
+  "Last_Season_Highlight": "Winning the League All-you-can-eat sambusa showdown for charity",
+  "athleteID": 85
 },
 "86" : {
   "Name": "Carlos Higgin",
@@ -1459,7 +1544,8 @@
   "Chakra": "Crown",
   "Doctor_Notes": "comprehensive pancreatic fatty-acids",
   "Williams_Ratio": "1/5",
-  "Last_Season_Highlight": "Meeting my childhood sports hero \"Skuggs\""
+  "Last_Season_Highlight": "Meeting my childhood sports hero \"Skuggs\"",
+  "athleteID": 86
 },
 "87" : {
   "Name": "Allegra Barrus",
@@ -1476,7 +1562,8 @@
   "Chakra": "Throat",
   "Doctor_Notes": "chronic transcriptional intake",
   "Williams_Ratio": "3/5",
-  "Last_Season_Highlight": "Competing in the Iditarod"
+  "Last_Season_Highlight": "Competing in the Iditarod",
+  "athleteID": 87
 },
 "88" : {
   "Name": "Gilberto Hackney",
@@ -1493,7 +1580,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "adaptive genome-wide circuitry",
   "Williams_Ratio": "3/5",
-  "Last_Season_Highlight": "Winning a ticket to Animal's Birthday Party"
+  "Last_Season_Highlight": "Winning a ticket to Animal's Birthday Party",
+  "athleteID": 88
 },
 "89" : {
   "Name": "Rex Sidoti",
@@ -1510,7 +1598,8 @@
   "Chakra": "Sacral",
   "Doctor_Notes": "de novo experimental tolerance",
   "Williams_Ratio": "4/5",
-  "Last_Season_Highlight": "Self-publishing a muder-mystery novel"
+  "Last_Season_Highlight": "Self-publishing a muder-mystery novel",
+  "athleteID": 89
 },
 "90" : {
   "Name": "Brock Haney",
@@ -1527,5 +1616,6 @@
   "Chakra": "Root",
   "Doctor_Notes": "inactive anterior down-regulation",
   "Williams_Ratio": "3/5",
-  "Last_Season_Highlight": "Winning the Millenial Prize for solving the Navier–Stokes Equation"
+  "Last_Season_Highlight": "Winning the Millenial Prize for solving the Navier–Stokes Equation",
+  "athleteID": 90
 }}

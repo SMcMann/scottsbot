@@ -1,0 +1,162 @@
+{ 
+    "super": {
+        "zillions" : "999999",
+        "kudosBanked": "100",
+        "acquiredKudos": "0",
+        "bankID": "731646725336465428",
+        "logID": "731646692004200560", 
+        "fName": "Supercomputer", 
+        "roleID": "718854222090731540",
+        "tag": "sc", 
+        "cashCoordinates": "18",
+        "statTokens" : 50,
+        "bonusTokens" : 50,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : ""
+    },
+    "bju": {
+        "zillions" : "87",
+        "kudosBanked": "4",
+        "acquiredKudos": "0",
+        "bankID": "700148873091481641",
+        "logID": "700073585049600061", 
+        "fName": "Beijing United", 
+        "roleID": "699405235319341067",
+        "tag": "bju", 
+        "cashCoordinates": "2",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : ""
+    },
+    "jtm": {
+        "zillions" : "84",
+        "kudosBanked": "3",
+        "acquiredKudos": "0",
+        "bankID": "733953788024717483",
+        "logID": "733954108377137162", 
+        "fName": "The Jakarta Tobacco Monopoly", 
+        "roleID": "733952327177863219",
+        "tag": "jtm", 
+        "cashCoordinates": "3",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : ""
+    },
+    "mm": {
+        "zillions" : "85",
+        "kudosBanked": "5",
+        "acquiredKudos": "0",
+        "bankID": "700074074537459933",
+        "logID": "700074043402878987", 
+        "fName": "The Mumbai Moguls", 
+        "roleID": "699405615549906974",
+        "tag": "mm",
+        "cashCoordinates": "4",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : ""
+    },
+    "osu": {
+        "zillions" : "75",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "699501222318702683",
+        "logID": "699404875766956143", 
+        "fName": "The Osaka Underground", 
+        "roleID": "699081448950595686",
+        "tag": "osu",
+        "cashCoordinates": "5",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : ""
+    },    
+    "frv": {
+        "zillions" : "85",
+        "kudosBanked": "5",
+        "acquiredKudos": "0",
+        "bankID": "699501156845617292",
+        "logID": "699404648649588906", 
+        "fName": "The French Revolution", 
+        "roleID": "699081375680036894",
+        "tag": "frv",
+        "cashCoordinates": "6",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : ""
+    },
+    "hkr": {
+        "zillions" : "83",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "733956803498475531",
+        "logID": "733956743079657482", 
+        "fName": "The Hong Kong Riot", 
+        "roleID": "733955552761348096",
+        "tag": "hkr",
+        "cashCoordinates": "7",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : ""
+    },
+    "lel": {
+        "zillions" : 0,
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "733425214670504019",
+        "logID": "733422615007592468", 
+        "fName": "The London Elite", 
+        "roleID": "733965933282066444",
+        "tag": "lel",
+        "cashCoordinates": "8",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : ""
+    }
+  }

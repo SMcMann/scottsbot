@@ -7,68 +7,121 @@ const athletes = require('../modules/dataFiles/athleteData.json')
 module.exports = {
     name: 'draft',
     cooldown: 0,
-    description: 'pulls info from a google sheet',
+    description: 'drafts Athletes from the pool',
     guildOnly: true,
     args: true,
     usage: "<Athlete's ID>",
-    execute(message, args) {
+    async execute(message, args) {
+        message.channel.send('```CSS\nWorking...\n```');
+
         var target;
         let drafterClass = functions.searchID(message.member);
-        let senderJob = functions.jobCheck(message.member)
-        let athleteID = parseInt(args[0]);
-
-        if (senderJob != "GM"){
-            throw "```CSS\nYou must be an GM to draft Athletes\n```"
+        if (!drafterClass){
+            return message.reply("```css\nYou do not have a valid role\n```")
         }
 
-        if (drafterClass.fName != draftingTeam){
-            throw ("```CSS\nIt is not your turn to Draft yet.\n The current Draft is: " + draftingTeam + "'s Pick number " + draftPick + "\n```")
+        let superComputer = message.member.roles.cache.some((r) => r.name === "Supercomputer")
+        let senderJob = message.member.roles.cache.some((r) => r.name === "GM")
+
+        if (!senderJob){
+            message.reply("```CSS\nYou must be a GM to draft!\n```")
+            return;
+        }  
+
+        await functions.setupAthletes();
+
+        let x = parseInt(args[0]); //
+        let athleteID;
+        let turn = false;
+        let draftPosition;
+
+
+        //if (!runningDraft){
+         //   throw "The draft is not running at the moment. Please try again when the draft is active."
+        //}
+
+
+        for (var i = 0; i < draftingTeam.length; i++){
+            if (drafterClass.fName === draftingTeam[i].team){
+                turn = true;
+                draftPosition = i;
+                break;
+            }//if
+        }//for
+        if (!turn){
+            message.reply("```CSS\nIt is not your turn to Draft yet.\n```")
+            return;
         }
 
         //check to see if player is drafting by ID number
-        if (Number.isInteger(athleteID) && athleteID > 0 && athleteID < 91){
-            target = athleteArray[athleteID];
+        if (Number.isInteger(x) && x > 0 && x < 91){
+            target = athleteArray[x];
+            athleteID = x;
         }
         else {
             //target = athleteArray.indexOf(args[0])
-            throw "```CSS\nPlease enter a valid ID number\n``` ";
-        }
+            for (var i = 1; i < athleteArray.length; i++){
+                let lowerNickname = athleteArray[i].League_Nom_de_Plume.toLowerCase();
+
+                if (lowerNickname === args[0] || args[0] === athleteArray[i].League_Nom_de_Plume){
+                    target = athleteArray[i];
+                    athleteID = i;
+                }//if                  
+            }//for
+        }//else
 
         if (!target){
-            throw ("```CSS\nCannot find the Athlete at ID number " + athleteID + "\n```")
+            message.reply("```CSS\nCannot find the Athlete or ID number \n```");
+            return;
         }
 
         if (target.FRANCHISE){
-            throw ("```CSS\n" + target.Name + " has already been drafted by: " + target.FRANCHISE + "\n```")
+            message.reply("```CSS\n" + target.Name + " has already been drafted by: " + target.FRANCHISE + "\n```")
+            return;
         }
-            message.reply('```CSS\nDraft ' + target.Name + " ? \nConfirm with a thumb up or cancel with a thumb down.\n```");
+
+        let msg = await message.reply('```CSS\nDraft #' + athleteID + " " + target.League_Nom_de_Plume + " (" + target.Name + ", " + target.Position + ") ? \nConfirm with a thumb up or cancel with a thumb down.\n```");
         // Reacts so the user only have to click the emojis
-        message.react('👍').then(r => {
-            message.react('👎');
-    });
+        await msg.react("👍")
+        await msg.react("👎")
     
     // First argument is a filter function
-    message.awaitReactions((reaction, user) => user.id == message.author.id && (reaction.emoji.name == '👍' || reaction.emoji.name == '👎'),
-            { max: 1, time: 10000 }).then(collected => {
-                    if (collected.first().emoji.name == '👍') {
-                         //the actual exchange of resources  
-                         target.FRANCHISE = drafterClass.fName;
+    msg.awaitReactions((reaction, user) => user.id == message.author.id && (reaction.emoji.name == '👍' || reaction.emoji.name == '👎'),
+        { max: 1, time: 15000 }).then(collected => {
+            if (collected.first().emoji.name == '👍') {
+                //the actual exchange of resources  
+                target.FRANCHISE = drafterClass.fName;
+                drafterClass.athletes.push(target);
+                message.reply("```CSS\nYou have successfully drafted " + target.Name + " AKA: " + target.League_Nom_de_Plume + "\n```");
 
-                         message.reply("```CSS\nYou have successfully drafted " + target.Name + " AKA: " + target.League_Nom_de_Plume + "\n```");
-                         //send message to #draft-tracker
-                         var channel = message.client.channels.cache.get("722279997959569458");
-                         channel.send("```CSS\nWith the #" + draftPick + " pick of the 3077 Draft\n" + drafterClass.fName + " select:\n#" + athleteID + " - " + target.Name + "\n```");
+                //send message to #draft-tracker
+                var channel = message.client.channels.cache.get("722279997959569458");
+                channel.send("```CSS\nWith the #" + draftingTeam[draftPosition].pick + " pick of the 3078 Draft\n" + drafterClass.fName + " select:\n#" + athleteID + " - " + target.Name + "\n```");
 
-                         //update draft
-                         draftArray[draftPick].PlayerPickedID = athleteID;
-                         functions.updateDraftPicked(athleteID, drafterClass.fName);
+                //update draft
+                //draftArray[draftingTeam[draftPosition].round].PlayerPickedID = athleteID;
+                try{
+                functions.updateDraftPicked(athleteID, drafterClass.fName, draftingTeam[draftPosition].pick);                    
+                }
+                catch{
+                    console.log("error with updating draft sheet")
+                }
 
-                    }//if thumbs up
-                    else
-                            message.reply('Operation canceled.');
-            }).catch(() => {
-                    message.reply('```CSS\nNo reaction after 10 seconds, operation canceled\n```');
-            });
+
+                //remove current team from the Drafting pool
+                draftingTeam.splice(draftPosition, 1);
+
+                //update player's assets
+                channel = message.client.channels.cache.get(drafterClass.bankID);
+                channel.bulkDelete(5);
+                var assetMessage = functions.createAssetsMessage(drafterClass);
+                channel.send(assetMessage);
+            }//if thumbs up
+            else
+                    message.reply('```CSS\nOperation canceled.\n```');
+        }).catch(() => {
+                message.reply('```CSS\nNo reaction after 15 seconds, operation canceled\n```');
+        });
     }//execute
 
 }
