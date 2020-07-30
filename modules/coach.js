@@ -11,6 +11,7 @@ module.exports = class Coach {
         this.Performance_Range = coach.Performance_Range;
         this.Min_Performance = parseInt(coach.Min_Performance);
         this.Max_Performance = parseInt(coach.Max_Performance);
+        this.Actual_Performance = parseInt(coach.Actual_Performance);
         this.changedFranchise = coach.changedFranchise;
         this.bids = coach.bids;
     }

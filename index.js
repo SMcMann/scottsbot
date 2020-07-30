@@ -21,7 +21,7 @@ const cooldowns = new Discord.Collection();
 client.once('ready', () => {
 
   console.log('Ready!');
-  client.user.setActivity("Halo 27: Master Chief's Big Wedding", { type: 'PLAYING' });
+  client.user.setActivity("Draft Night 3078", { type: 'PLAYING' });
  });
 
 
@@ -42,11 +42,11 @@ client.on('message', message => {
     return message.reply('I can\'t execute that command inside DMs!');
   }
 
-  if (command.args && !args.length) { //whenever you set args to true in one of your command files, it'll perform this check and supply feedback if necessary
-    let reply = `You didn't provide any arguments, ${message.author}!`;
+  if (command.args && args.length < command.argsAmount) { //whenever you set args to true in one of your command files, it'll perform this check and supply feedback if necessary
+    let reply = `\`\`\`css\nYou didn't provide the right amount of arguments, ${message.member.displayName}!\`\`\``;
 
     if (command.usage) {
-      reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+      reply += `\`\`\`css\n\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\`\`\``;
     }
     return message.channel.send(reply);
   }//if args
@@ -86,11 +86,6 @@ client.on('message', message => {
 
 client.on("error", function(error){
   console.error(`client's WebSocket encountered a connection error: ${error}`);
-});
-
-client.on("guildMemberAdd", (member) => {
-  console.log(`New User "${member.user.username}" has joined "${member.guild.name}"` );
-  member.guild.channels.cache.find(c => c.name === "welcome").send(`"${member.user.username}" has joined this server! --DESPAIR AND RUIN HAS COME TO THIS SERVER-- Hooray!`);
 });
 
 client.login(token);

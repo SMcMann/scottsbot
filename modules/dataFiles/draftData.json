@@ -2,245 +2,245 @@
 "1" : {
   "Pick": "1",
   "Round": "1",
-  "Current_Team": "Beijing United",
+  "Current_Team": "BJU",
   "PlayerPickedID": "",
   "PlayerPickedName": ""
 },
 "2" : {
   "Pick": "2",
   "Round": "1",
-  "Current_Team": "The Osaka Underground",
+  "Current_Team": "JTM",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "3" : {
   "Pick": "3",
   "Round": "1",
-  "Current_Team": "The French Revolution",
+  "Current_Team": "MM",
   "PlayerPickedID": "",
   "PlayerPickedName": ""
 },
 "4" : {
   "Pick": "4",
   "Round": "1",
-  "Current_Team": "The Mumbai Moguls",
+  "Current_Team": "OSU",
   "PlayerPickedID": "",
   "PlayerPickedName": ""
 },
 "5" : {
   "Pick": "5",
   "Round": "1",
-  "Current_Team": "The Jakarta Tobacco Monopoly",
+  "Current_Team": "FRV",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "6" : {
   "Pick": "6",
   "Round": "1",
-  "Current_Team": "The Hong Kong Riot",
+  "Current_Team": "HKR",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "7" : {
   "Pick": "7",
   "Round": "1",
-  "Current_Team": "The London Elite",
+  "Current_Team": "LEL",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "8" : {
   "Pick": "8",
-  "Round": "2",
-  "Current_Team": "Beijing United",
+  "Round": "1",
+  "Current_Team": "MCV",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "9" : {
   "Pick": "9",
-  "Round": "2",
-  "Current_Team": "The Osaka Underground",
+  "Round": "1",
+  "Current_Team": "AVC",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "10" : {
   "Pick": "10",
-  "Round": "2",
-  "Current_Team": "The French Revolution",
+  "Round": "1",
+  "Current_Team": "CMC",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "11" : {
   "Pick": "11",
-  "Round": "2",
-  "Current_Team": "The Mumbai Moguls",
+  "Round": "1",
+  "Current_Team": "MXC",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "12" : {
   "Pick": "12",
-  "Round": "2",
-  "Current_Team": "The Jakarta Tobacco Monopoly",
+  "Round": "1",
+  "Current_Team": "TU",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "13" : {
   "Pick": "13",
-  "Round": "2",
-  "Current_Team": "The Hong Kong Riot",
+  "Round": "1",
+  "Current_Team": "JGL",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "14" : {
   "Pick": "14",
-  "Round": "2",
-  "Current_Team": "The London Elite",
+  "Round": "1",
+  "Current_Team": "POL",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "15" : {
   "Pick": "15",
-  "Round": "3",
-  "Current_Team": "Beijing United",
+  "Round": "1",
+  "Current_Team": "RYE",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "16" : {
   "Pick": "16",
-  "Round": "3",
-  "Current_Team": "The Osaka Underground",
+  "Round": "1",
+  "Current_Team": "SPI",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "17" : {
   "Pick": "17",
-  "Round": "3",
-  "Current_Team": "The French Revolution",
+  "Round": "2",
+  "Current_Team": "BJU",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "18" : {
   "Pick": "18",
-  "Round": "3",
-  "Current_Team": "The Mumbai Moguls",
+  "Round": "2",
+  "Current_Team": "JTM",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "19" : {
   "Pick": "19",
-  "Round": "3",
-  "Current_Team": "The Jakarta Tobacco Monopoly",
+  "Round": "2",
+  "Current_Team": "MM",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "20" : {
   "Pick": "20",
-  "Round": "3",
-  "Current_Team": "The Hong Kong Riot",
+  "Round": "2",
+  "Current_Team": "OSU",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "21" : {
   "Pick": "21",
-  "Round": "3",
-  "Current_Team": "The London Elite",
+  "Round": "2",
+  "Current_Team": "FRV",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "22" : {
   "Pick": "22",
-  "Round": "4",
-  "Current_Team": "Beijing United",
+  "Round": "2",
+  "Current_Team": "HKR",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "23" : {
   "Pick": "23",
-  "Round": "4",
-  "Current_Team": "The Osaka Underground",
+  "Round": "2",
+  "Current_Team": "LEL",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "24" : {
   "Pick": "24",
-  "Round": "4",
-  "Current_Team": "The French Revolution",
+  "Round": "2",
+  "Current_Team": "MCV",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "25" : {
   "Pick": "25",
-  "Round": "4",
-  "Current_Team": "The Mumbai Moguls",
+  "Round": "2",
+  "Current_Team": "AVC",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "26" : {
   "Pick": "26",
-  "Round": "4",
-  "Current_Team": "The Jakarta Tobacco Monopoly",
+  "Round": "2",
+  "Current_Team": "CMC",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "27" : {
   "Pick": "27",
-  "Round": "4",
-  "Current_Team": "The Hong Kong Riot",
+  "Round": "2",
+  "Current_Team": "MXC",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "28" : {
   "Pick": "28",
-  "Round": "4",
-  "Current_Team": "The London Elite",
+  "Round": "2",
+  "Current_Team": "TU",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "29" : {
   "Pick": "29",
-  "Round": "5",
-  "Current_Team": "Beijing United",
+  "Round": "2",
+  "Current_Team": "JGL",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "30" : {
   "Pick": "30",
-  "Round": "5",
-  "Current_Team": "The Osaka Underground",
+  "Round": "2",
+  "Current_Team": "POL",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "31" : {
   "Pick": "31",
-  "Round": "5",
-  "Current_Team": "The French Revolution",
+  "Round": "2",
+  "Current_Team": "RYE",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "32" : {
   "Pick": "32",
-  "Round": "5",
-  "Current_Team": "The Mumbai Moguls",
+  "Round": "2",
+  "Current_Team": "SPI",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "33" : {
   "Pick": "33",
-  "Round": "5",
-  "Current_Team": "The Jakarta Tobacco Monopoly",
+  "Round": "3",
+  "Current_Team": "BJU",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "34" : {
   "Pick": "34",
-  "Round": "5",
-  "Current_Team": "The Hong Kong Riot",
+  "Round": "3",
+  "Current_Team": "JTM",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 },
 "35" : {
   "Pick": "35",
-  "Round": "5",
-  "Current_Team": "The London Elite",
+  "Round": "3",
+  "Current_Team": "MM",
   "PlayerPickedID": "undefined",
   "PlayerPickedName": "undefined"
 }}

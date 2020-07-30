@@ -7,7 +7,7 @@ const functions = require('../commands/functions.js')
 const fs = require('fs')
 
 module.exports = {  
-    var: Super = new Team(startup.super),
+    var: SUPER = new Team(startup.super),
     var: BJU = new Team(startup.bju),  
     var: JTM = new Team(startup.jtm), 
     var: MM = new Team(startup.mm),    
@@ -15,8 +15,17 @@ module.exports = {
     var: FRV = new Team(startup.frv),  
     var: HKR = new Team(startup.hkr),
     var: LEL = new Team(startup.lel),
+    var: MCV = new Team(startup.mcv),
+    var: AVC = new Team(startup.avc),
+    var: MXC = new Team(startup.mxc),
+    var: CMC = new Team(startup.cmc),
+    var: TU = new Team(startup.tu),
+    var: JGL = new Team(startup.jgl),
+    var: RYE = new Team(startup.rye),
+    var: POL = new Team(startup.pol),
+    var: SPI = new Team(startup.spi),
 
-    let: allTeams = [BJU, JTM, FRV, OSU, MM, HKR, LEL], //  
+    let: allTeams = [SUPER, BJU, JTM, FRV, OSU, MM, HKR, LEL, MCV, AVC, MXC, CMC, TU, JGL, RYE, POL, SPI], //  
     //var: googleLogRow = 0,
     var: googleLogKudos = 0,
     var: draftPick = 1,
@@ -51,34 +60,12 @@ module.exports = {
     call: functions.setupDraft(),
     call: functions.setupCoaches(),
     call: functions.loadStats(statArray),
-    //call: setInterval(autoBackup, 100000) 
+    call: setInterval(autoBackup, 30000) 
 }
 
 
  async function autoBackup(){
-    var jsonContent = "{\n"    
-    //await functions.updateFromGoogle();
 
-    for (i = 0; i < allTeams.length; i++) {
-
-        let jsonObj = allTeams[i];
-        //console.log(jsonObj);
-
-        // stringify JSON Object
-        jsonContent = jsonContent + "\"" + allTeams[i].tag + "\": \n"+ JSON.stringify(jsonObj) + ",\n";
-        //console.log(jsonContent);
-        }//for 
-        jsonContent = jsonContent.substring(0, jsonContent.length -2);
-
-        jsonContent = jsonContent + "}";
-
-        fs.writeFile("./modules/dataFiles/backup.json", jsonContent, 'utf8', function (err) {
-            if (err) {
-                console.log("An error occured while writing JSON Object to File.");
-                return console.log(err);
-            }
-        
-        }); 
         var statContent = "{" 
         for (var i = 0; i < statArray.length; i++){
             let jsonObj = statArray[i];

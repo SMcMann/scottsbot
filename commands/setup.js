@@ -15,23 +15,25 @@ module.exports = {
     
         //await functions.setupAthletes();
 
-        let draftTracker = "722279997959569458"
-        let vpLounge = "728370259148669040";
+        let draftTracker = "722279997959569458" //update with new draft tracker
+        let vpLounge = "728370259148669040";// new ID 737645577327869952
         //re-add athlete's to their teams athlete[]
 
 
 
         for (i = 0; i < allTeams.length; i++) {
             //update all teams banks AKA Assets
-            channel = message.client.channels.cache.get(allTeams[i].bankID);
+            //channel = message.client.channels.cache.get(allTeams[i].bankID);// OLD METHOD
+            var channel = message.guild.channels.cache.find(c => c.name === `${allTeams[i].tag}-assets`)
             channel.bulkDelete(5);
 
             var bankEmbed = functions.createAssetsMessage(allTeams[i]);
-            channel.send(bankEmbed);
-            //console.log(bankEmbed);
+            let msg = channel.send(bankEmbed)
+
     
             //delete all messages in the log
-            channel = message.client.channels.cache.get(allTeams[i].logID);
+            //channel = message.client.channels.cache.get(allTeams[i].logID);
+            var channel = message.guild.channels.cache.find(c => c.name === `${allTeams[i].tag}-terminal`)
             channel.bulkDelete(100);
         }//for   
             //clear out the draft tracker
@@ -39,9 +41,8 @@ module.exports = {
             channel.bulkDelete(100);
 
             //clear out the vp lounge
-            channel = message.client.channels.cache.get(vpLounge);
-            channel.bulkDelete(100);
-            
+
+            //update #kudos-tracker
             functions.updateKudosChannel(message);
                    
         // }, 2000);

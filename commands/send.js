@@ -8,28 +8,31 @@ module.exports = {
     description: 'Send resources to other factions',
     guildOnly: true,
     args: true,
+    argsAmount: 2,
     usage: '<@target> <amount>',
     async execute(message, args) {
 
-        message.channel.send('```CSS\nWorking...\n```');
-    
         let senderClass = functions.searchID(message.member);
         if (!senderClass){
             return message.reply("```css\nYou do not have a valid role\n```")
         }
 
+        if (message.channel.name != `${senderClass.tag}-terminal`){
+            message.reply("```css\n You must issue commands inside your team's terminal. Please try again inside '" + senderClass.tag +"-terminal' \n```")
+             return;
+        }
 
         let superComputer = message.member.roles.cache.some((r) => r.name === "Supercomputer")
         let senderJob = message.member.roles.cache.some((r) => r.name === "Owner")
-
 
         if (!senderJob){
             message.reply("```CSS\nYou must be an Owner to manage your team's finances\n```")
             return;
         }
-        
+
+        message.channel.send('```CSS\nWorking...\n```');        
         var cash;
-        const user1 = message.member.displayName        
+        const user1 = message.member.displayName;   
         var recieverClass;
 
         /*grabs the first mention in a command, otherwise should be undefined NO LONGER USED
@@ -97,6 +100,7 @@ module.exports = {
         msg.awaitReactions((reaction, user) => user.id === message.author.id && (reaction.emoji.name == '👍' || reaction.emoji.name == '👎'),
                 { max: 1, time: 15000 }).then(collected => {
                         if (collected.first().emoji.name == '👍') {
+                            var channel;
                              //update local data for sake of keeping players in loop
                             senderClass.outgoing(parseInt(amount), "zillions"); 
                             recieverClass.incoming(parseInt(amount), "zillions");  
@@ -110,31 +114,37 @@ module.exports = {
                             }
 
                             //reply to sender confirmation
-                            message.reply("```CSS\nSent " + amount + " zillion to " + recieverClass.fName + "\n```");
+                            try{
+                                message.reply("```CSS\nSent " + amount + " zillion to " + recieverClass.fName + "\n```");
 
-                            //update whoever recieved the resource in their log channel 
-                            var channel = message.client.channels.cache.get(recieverClass.logID);
-                            channel.send("```CSS\n[" + 
-                            user1 + `] sent you: ` + amount + " zillion\n```" 
-                            );
+                                //update whoever recieved the resource in their log channel 
+                                //channel = message.client.channels.cache.get(recieverClass.logID);
+                                channel = message.guild.channels.cache.find(c => c.name === `${recieverClass.tag}-terminal`)
+                                channel.send("```CSS\n[" + 
+                                user1 + `] sent you: ` + amount + " zillion\n```" 
+                                );                                
+                            }
+                            catch {
+                                console.log(`couldn't send a log message to ${recieverClass.tag}`)
+                            }
+
+
                             //UPDATE BANK INFO FOR RECIEVER
-                            channel = message.client.channels.cache.get(recieverClass.bankID);
+                            channel = message.guild.channels.cache.find(c => c.name === `${recieverClass.tag}-assets`)
+                            //channel = message.client.channels.cache.get(recieverClass.bankID);
                             channel.bulkDelete(2);
 
                             var exampleEmbed = functions.createAssetsMessage(recieverClass);
+                            channel.send(exampleEmbed);
 
                             //Update sender bank
-                            channel.send(exampleEmbed);
-                            
-                            channel = message.client.channels.cache.get(senderClass.bankID);
+                            channel = message.guild.channels.cache.find(c => c.name === `${senderClass.tag}-assets`)
+                            //channel = message.client.channels.cache.get(senderClass.bankID);
                             channel.bulkDelete(2);
 
                             exampleEmbed = functions.createAssetsMessage(senderClass);
-
                             channel.send(exampleEmbed);
 
-                            channel = message.client.channels.cache.get(senderClass.logID);
-                            channel.send("```CSS\n[" + user1 + "] sent " + recieverClass.fName + " " + amount + " zillion \n```");
                            
                         }//if thumbs up
                         else

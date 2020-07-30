@@ -12,16 +12,13 @@ module.exports = {
     args: false,
     usage: '',
     async execute(message, args) {
+        
+        channel = message.client.channels.cache.get(BJU.bankID);
+        const msg = await channel.messages.fetch("737720959909363762")
 
-        //console.log(draftArray[1]);
-        functions.updateKudosChannel(message);
+        exampleEmbed = functions.createAssetsMessage(BJU);
 
-        //let x = allnumeric(args[0])
-
-        //console.log(args[0]);
-
-        //kudos = await  functions.getCellValue(senderClass, "kudos")        
-        //console.log(kudos);
+        msg.edit(exampleEmbed);
     }//execute
 
 }

@@ -12,9 +12,19 @@ module.exports = {
         var time;
         var draftRound = 0;
         var channel;        
-        if (args[0] === 1){
-            //update so time = 10 mins for 1st round. 
+        if (args[0] == 4){
+            time = 240000 //4 minutes
         }
+        else if(args[0] == 5){
+            time = 300000 //5 minutes
+        }
+        else if(args[0] == 1){
+            time = 60000 //1 minutes
+        }
+        else{
+            return message.reply("You need to provide either 1, 4, or 5 as an arguement to make the draft 1 minute, 4 minutes, or 5 minutes.")
+        }
+
 
         let superComputer = message.member.roles.cache.some((r) => r.name === "Supercomputer")
 
@@ -36,7 +46,7 @@ module.exports = {
                 clearInterval(runningDraft);
                 runningDraft = false;
                 //step 2 make an announcement
-                channel = message.client.channels.cache.get(draftAnnouncement);
+                channel = message.guild.channels.cache.find(c => c.name === `draft-tracker`);
                 channel.send("```CSS\n Round " + draftRound + " Complete. \n```");
                 console.log("Round " + draftRound + " Complete.")
                 //step 3 update the current Round to the next one               
@@ -59,8 +69,8 @@ module.exports = {
                 console.log("Draft round: "+ x)
 
                 team = functions.protoValidateTarget(x); // get the team class so we can send them a message
-                var channel = message.client.channels.cache.get(team.logID);
-                //"<@&"+FRV.roleID+">"
+                channel = message.guild.channels.cache.find(c => c.name === `${team.tag}-terminal`);
+
                 channel.send("<@&"+team.roleID+"> ```CSS\nATTENTION  \nYOUR DRAFT PICK NO. "+ draftPick + " IS NOW ACTIVE. \n```");  
                 functions.updateDraftRound(draftRound, draftPick);
             }//else
@@ -68,14 +78,11 @@ module.exports = {
         }//myFunction
 
         if (!runningDraft){ //if the draft is not live restart it
-            const tenMinutes = 600000;
-            const min = 60000
-            const thirtySec = 30000;
             
             await myFunction(); //do the thing
-            runningDraft = setInterval(myFunction, min);
+            runningDraft = setInterval(myFunction, time);
             message.reply("```CSS\n Drafting is now live! \n```");
-            channel = message.client.channels.cache.get(draftAnnouncement);
+            channel = message.guild.channels.cache.find(c => c.name === `draft-tracker`);
             channel.send("```CSS\n Drafting is now [live]! \n```");
             console.log("Draft Started!!")
         }//if (!runningDraft)
@@ -83,7 +90,7 @@ module.exports = {
             clearInterval(runningDraft);
             runningDraft = false;
             functions.updateDraftPickNo();
-            channel = message.client.channels.cache.get(draftAnnouncement);
+            channel = message.guild.channels.cache.find(c => c.name === `draft-tracker`);
             message.reply("```CSS\nDrafting has been [suspended]!\n```");
             channel.send("```CSS\nDrafting has been [suspended]!\n```");
             console.log("Draft Stopped!!")

@@ -10,14 +10,18 @@ module.exports = {
     description: 'drafts Athletes from the pool',
     guildOnly: true,
     args: true,
+    argsAmount: 1,
     usage: "<Athlete's ID>",
     async execute(message, args) {
-        message.channel.send('```CSS\nWorking...\n```');
-
         var target;
         let drafterClass = functions.searchID(message.member);
         if (!drafterClass){
             return message.reply("```css\nYou do not have a valid role\n```")
+        }
+
+        if (message.channel.name != `${drafterClass.tag}-terminal`){
+            message.reply("```css\n You must issue commands inside your team's terminal. Please try again inside '" + drafterClass.tag +"-terminal' \n```")
+             return;
         }
 
         let superComputer = message.member.roles.cache.some((r) => r.name === "Supercomputer")
@@ -27,7 +31,8 @@ module.exports = {
             message.reply("```CSS\nYou must be a GM to draft!\n```")
             return;
         }  
-
+        
+        message.channel.send('```CSS\nWorking...\n```');
         await functions.setupAthletes();
 
         let x = parseInt(args[0]); //
@@ -42,7 +47,7 @@ module.exports = {
 
 
         for (var i = 0; i < draftingTeam.length; i++){
-            if (drafterClass.fName === draftingTeam[i].team){
+            if (drafterClass.fName === draftingTeam[i].team || drafterClass.tag === draftingTeam[i].team.toLowerCase()){
                 turn = true;
                 draftPosition = i;
                 break;
@@ -54,7 +59,7 @@ module.exports = {
         }
 
         //check to see if player is drafting by ID number
-        if (Number.isInteger(x) && x > 0 && x < 91){
+        if (Number.isInteger(x) && x > 0 && x < 113){
             target = athleteArray[x];
             athleteID = x;
         }
@@ -90,12 +95,13 @@ module.exports = {
         { max: 1, time: 15000 }).then(collected => {
             if (collected.first().emoji.name == '👍') {
                 //the actual exchange of resources  
-                target.FRANCHISE = drafterClass.fName;
+                target.FRANCHISE = drafterClass.tag;
                 drafterClass.athletes.push(target);
                 message.reply("```CSS\nYou have successfully drafted " + target.Name + " AKA: " + target.League_Nom_de_Plume + "\n```");
 
                 //send message to #draft-tracker
-                var channel = message.client.channels.cache.get("722279997959569458");
+                var channel = message.guild.channels.cache.find(c => c.name === `draft-tracker`)
+                
                 channel.send("```CSS\nWith the #" + draftingTeam[draftPosition].pick + " pick of the 3078 Draft\n" + drafterClass.fName + " select:\n#" + athleteID + " - " + target.Name + "\n```");
 
                 //update draft
@@ -112,7 +118,8 @@ module.exports = {
                 draftingTeam.splice(draftPosition, 1);
 
                 //update player's assets
-                channel = message.client.channels.cache.get(drafterClass.bankID);
+                //channel = message.client.channels.cache.get(drafterClass.bankID);
+                channel = message.guild.channels.cache.find(c => c.name === `${drafterClass.tag}-assets`);
                 channel.bulkDelete(5);
                 var assetMessage = functions.createAssetsMessage(drafterClass);
                 channel.send(assetMessage);

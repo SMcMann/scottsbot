@@ -270,3 +270,5 @@ node_modules/is-stream/readme.md
 config.json
 token.json
 config.json
+statData.json
+statDataBackup.json

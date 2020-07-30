@@ -7,10 +7,12 @@ module.exports = {
     cooldown: 5,
     description: 'Send resources to other factions',
     guildOnly: true,
-    args: false,
+    args: true,
+    argsAmount: 1,
     usage: '<@target> <amount> OR <@target> for single kudos amount',
     async execute(message, args) {
-        const vpChannel = "728370259148669040";
+        //const vpChannel = "728370259148669040";
+        const vpChannel = message.guild.channels.cache.find(c => c.name === `👔jack-ma-alumni-lounge`)
 
         let senderClass = functions.searchID(message.member);
         if (!senderClass){
@@ -41,11 +43,13 @@ module.exports = {
 
         if (args.length === 2){//if the user has 2 arguements, meaning they are sending more than 1 kudos
             //*grabs the first mention in a command, otherwise should be undefined
+            /*
             let x = message.mentions.members.first();
             if (x){
                 recieverClass = functions.searchIDProto(x)
             }
-        
+            */
+
             //checks each arguement provided, and if there is a valid target accepts it. Otherwise break off throwing error
             if (!recieverClass){
                 recieverClass = functions.protoValidateTarget(args[0]);
@@ -65,9 +69,9 @@ module.exports = {
             }
 
             //checks all arguements to see if there is a valid int provided, then saves it in "amount"
-            if (Number.isInteger(args[0]))
+            if (Number.isInteger(parseInt(args[0])))
                 amount = parseInt(args[0]);
-            else if (Number.isInteger(args[1]))
+            else if (Number.isInteger(parseInt(args[1])))
                 amount = parseInt(args[1]);
             if (!amount){
                 message.reply("```css\nYou did not provide a valid amount\n```")
@@ -104,7 +108,7 @@ module.exports = {
                 amount = 1;
 
         }//else if (args.length === 1)
-        else if (args.length > 2){
+        else {
             message.reply("```CSS\nYou have too many arguemnts. \n Proper usade of !kudos is: \n <@target> <amount> OR <@target> for single kudos amount \n```")
             return;
         }
@@ -116,7 +120,7 @@ module.exports = {
             return;                
         }
 
-        let msg = await message.channel.send('```CSS\nSend ' + amount + " kudos to " + recieverClass.fName +'? \nConfirm with a thumb up or cancel with a thumb down.```\n');
+        let msg = await message.reply('```CSS\nSend ' + amount + " kudos to " + recieverClass.fName +'? \nConfirm with a thumb up or cancel with a thumb down.```\n');
     
         // Reacts so the user only have to click the emojis
         await msg.react("👍")
@@ -131,8 +135,8 @@ module.exports = {
                              recieverClass.incoming(parseInt(amount), resource); 
                             //update google spreadsheets
                             //UPDATE VP Lounge
-                            channel = message.client.channels.cache.get(vpChannel);
-                            channel.send("```CSS\n["+ user + "] sent " + recieverClass.fName + " " + amount + " kudos ```\n");   
+                            //channel = message.client.channels.cache.get(vpChannel);
+                            vpChannel.send("```CSS\n["+ user + "] sent " + recieverClass.fName + " " + amount + " kudos ```\n");   
 
                             try{
                               await functions.updateKudosSpreadsheet(senderClass, recieverClass, parseInt(amount));                                                   

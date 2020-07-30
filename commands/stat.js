@@ -7,10 +7,12 @@ module.exports = {
     cooldown: 0,
     guildOnly: true,
     args: true,
+    argsAmount: 1,
     description: 'enables players to make stat inquires into stats in Draft Night',
-    usage: '<stat>',
+    usage: '<stat name> OR <bonus> for bonus inquiries',
     async execute(message, args) {
         let content = ""
+        let inquiry = ""
 
         let senderClass = functions.searchID(message.member);
         if (!senderClass){
@@ -23,9 +25,13 @@ module.exports = {
             message.reply("```CSS\nYou must be a Saber to make stat inquiries\n```")
             return;
         } 
+
+        if (message.channel.name != `${senderClass.tag}-terminal`){
+            message.reply("```css\n You must issue commands inside your team's terminal. Please try again inside '" + senderClass.tag +"-terminal' \n```")
+             return;
+        }
         
         if (args[0].toLowerCase() === "bonus"){
-            let inquiry = ""
             let tokens = await functions.getStatToken(senderClass, "BONUS")
             //check for BONUS TOKENS
             if (tokens === 0){
@@ -36,9 +42,9 @@ module.exports = {
             // `m` is a message object that will be passed through the filter function
             const filter = m => m.author.id === message.author.id
 
-            let msg1 = await message.reply("```css\nPlease enter in chat what your bonus inquiry is.\n You will be asked for confirmation after you send\nYou have [20] Seconds```")
+            let msg1 = await message.reply("```css\nPlease enter in chat what your bonus inquiry is.\n You will be asked for confirmation after you send\nYou have [25] Seconds```")
                 
-            await msg1.channel.awaitMessages(filter, { max: 1, time: 20000, errors: ['time'] })
+            await msg1.channel.awaitMessages(filter, { max: 1, time: 25000, errors: ['time'] })
                     .then(m => {
                         inquiry = m.first().content;
                         //console.log(inquiry);
@@ -56,12 +62,14 @@ module.exports = {
                 msg.awaitReactions((reaction, user) => user.id == message.author.id && (reaction.emoji.name == '👍' || reaction.emoji.name == '👎'),
                 { max: 1, time: 15000 }).then(collected => {
                         if (collected.first().emoji.name == '👍') {
-                            channel = message.client.channels.cache.get(Super.logID);
-                            channel.send(`<@&${Super.roleID}>\n${message.member.displayName} has made an official inquiry about:\n ${inquiry}`);
-                            //channel.send("wat")    <@&${team.roleID}> 
+                            channel = message.guild.channels.cache.find(c => c.name === `super-chat`);
+                            channel.send(`<@&${SUPER.roleID}>\n${message.member.displayName} has made an official inquiry about:\n "${inquiry}"`);
+
                             senderClass.bonusTokens--;
-                            //TO DO: UPDATE GOOGLE SHEETS W/ NEW STAT TOKEN INFO
-                            functions.updateStatToken(senderClass, "BONUS", content) 
+                            //UPDATE GOOGLE SHEETS W/ NEW STAT TOKEN INFO
+                            functions.updateStatToken(senderClass, "BONUS", content, inquiry) 
+                            message.reply("```css\nYour inquiry has been submitted to the Supercomputers. They will get back to you with an aswer soon.\n" + 
+                            "In the [unlikely] event that they do not reply within the next 15 minutes, please feel free to remind them.\n```")
                         }//if thumbs up
                         else
                         message.reply('```css\nOperation canceled.\n```');
@@ -82,8 +90,8 @@ module.exports = {
             
             //finds the stat that is desired 
             var statClass;
-            for (var i = 0; i < statArray.length; i++){
-                if (statArray[i].statName === args[0])
+            for (var i = 0; i < statArray.length && !statClass; i++){
+                if (statArray[i].nameArray.includes(args[0].toLowerCase()))
                     statClass = statArray[i];
             }
 
@@ -116,10 +124,15 @@ module.exports = {
                     }
                     if(!statClass.freebie){//if the stat is 'free' information
                         senderClass.statTokens--;
+                        //TO DO: UPDATE GOOGLE SHEETS W/ NEW STAT TOKEN INFO                        
+                        functions.updateStatToken(senderClass, "STAT", content, statClass.statName)                     
                     }
-                    
-                    //TO DO: UPDATE GOOGLE SHEETS W/ NEW STAT TOKEN INFO
-                    functions.updateStatToken(senderClass, "STAT", content) 
+                    channel = message.guild.channels.cache.find(c => c.name === `${senderClass.tag}-assets`);
+                    channel.bulkDelete(2);
+
+                    exampleEmbed = functions.createAssetsMessage(senderClass);
+                    channel.send(exampleEmbed);
+
                 }//if thumbs up
                 else
                 message.reply('```css\nOperation canceled.\n```');

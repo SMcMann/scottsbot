@@ -14,6 +14,7 @@ module.exports = class Team {
         this.athletes = team.athletes;
         this.coachBid = team.coachBid; //coach name and $ amount
         this.coach = team.coach;
+        this.assetID = team.assetID;
         //this.startupCoordinates = team.startupCoordinates;
         /*
         */

@@ -34,6 +34,10 @@ module.exports = {
             'Description: Make a secret bid on a coach!\n\n' +
             "Usage: !bid <Coaches' First or Last Name> <Amount> OR !bid <Amount> <Coaches' First or Last Name>\n\n" +
             'Examples:\n!bid prince 5 ==========> Bid 5 zillion on Coach Prince P. Hone\n!bid 8 Penni ==========> Bid 5 zillion on Coach Penni Krum"\n\n' +
+            "\n!drop\n===================================================\n" +
+            'Description: Drop your current bid on a coach\n\n' +
+            "Usage: !drop \n\n" +
+            'Examples:\n!drop ==========> Drop your current bid after confirmation\n\n' +
             '\n```');
         }
 
@@ -48,10 +52,10 @@ module.exports = {
         if (saber){
             message.reply('```css\n[Saber Commands]\n\n!stat\n===================================================\n' +
             'Description: Inquire about a specific statistic and how it affects the games of the season!\n\n' +
-            'Usage: !stat <name of statistic> \n\n' +
-            'Examples:\n!stat salary \n!stat ABS\n\n' +
+            'Usage: !stat <name of statistic> OR !stat bonus for BONUS inquiry\n\n' +
+            'Examples:\n!stat salary \n!stat ABS\n!stat BONUS\n\n' +
             '*Notes: >Some statistics do not affect anything important, and thus will not consume a [Inquiry Credit] when you inquire about them\n'+
-            '        >You still need to access the [GENERAL] level of info before accessing the [SPECIFIC] level of info of a statistic\n```');
+            '        >You still need to access the [GENERAL] level of info before accessing the [SPECIFIC] level of info of a statistic\n\n ' + '\n```');
         }     
         
         if (superComputer){

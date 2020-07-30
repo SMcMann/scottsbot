@@ -22,31 +22,71 @@ module.exports = {
     guildOnly: true,
     args: true,
     usage: '<target>',
-    protoValidateTarget(item) {
-        if (item === "bju"  || item === "BJU" || item === "beijing" || item === "beijing united" || item === "Beijing United" || item === "<@&"+BJU.roleID+">")
+    protoValidateTarget(preItem) {
+        let item = preItem.toLowerCase();
+
+        if (item == "bju"  || item === "beijing" || item === "beijing united" || item === "Beijing United" || item === "<@&"+BJU.roleID+">")
             return BJU; 
         else if (
-            item == "jtm" || item === "JTM" || item === "the jakarta tobacco monopoly" || item === "The Jakarta Tobacco Monopoly" || item === "The Jakarta Tobacco Monoploy" || item === "The Jakarta Tobacco Monoply" || item === "jakarta" || item === "<@&"+JTM.roleID+">" 
+            item == "jtm" || item === "the jakarta tobacco monopoly" || preItem === "The Jakarta Tobacco Monopoly" || preItem === "The Jakarta Tobacco Monoploy" || preItem === "The Jakarta Tobacco Monoply" || item === "jakarta" || item === "<@&"+JTM.roleID+">" 
         )
             return JTM;       
         else if (
-            item == "frv" || item === "FRV" || item === "the french revolution" || item === "The French Revolution" || item === "france" || item === "<@&"+FRV.roleID+">" 
+            item == "frv" || item === "the french revolution" || item === "The French Revolution" || item === "france" || item === "<@&"+FRV.roleID+">" 
         )
             return FRV;
         else if (
-            item === "osu" || item === "OSU" || item === "osaka" || item === "the osaka underground" || item === "The Osaka Underground" || item === "<@&"+OSU.roleID+">"
+            item === "osu" || item === "osaka" || item === "the osaka underground" || item === "The Osaka Underground" || item === "<@&"+OSU.roleID+">"
         )
             return OSU;
-        else if (item === "mm" || item === "MM" || item === "mumbai" || item === "the mumbai moguls" || item === "The Mumbai Moguls" || item === "<@&"+MM.roleID+">")
+        else if (item === "mm" || item === "mumbai" || item === "the mumbai moguls" || item === "The Mumbai Moguls" || item === "<@&"+MM.roleID+">")
             return MM;
         else if (
-            item === "hkr" || item === "HKR" || item === "hong" || item === "kong" || item === "riot" || item === "the hong kong riot" || item === "The Hong Kong Riot" || item === "<@&"+HKR.roleID+">"
+            item === "hkr" || item === "hong" || item === "kong" || item === "riot" || item === "the hong kong riot" || item === "The Hong Kong Riot" || item === "<@&"+HKR.roleID+">"
         )
             return HKR;
         else if (
-            item === "lel" || item === "LEL" || item === "london" || item === "elite" || item === "the london elite" || item === "The London Elite" || item === "<@&"+LEL.roleID+">"
+            item === "lel" || item === "london" || item === "elite" || item === "the london elite" || item === "The London Elite" || item === "<@&"+LEL.roleID+">"
         )
             return LEL;
+
+        else if (
+            item === "mcv" || item === "murmansk" || item === "convoy" || item === "the murmansk convoy" || item === "The Murmansk Convoy" || item === "<@&"+MCV.roleID+">"
+        )
+        return MCV;
+        else if (
+            item === "avc" || item === "anaheim" || item === "VC" || item === "anaheim vc" || preItem === "Anaheim VC" || item === "<@&"+AVC.roleID+">"
+        )
+        return AVC;
+        else if (
+            item === "mxc" || item === "mixcoatl" || item === "mexico" || item === "mixcoatl mexico city" || preItem === "Mixcoatl Mexico City" || item === "<@&"+MXC.roleID+">" 
+        )
+        return MXC;
+        else if (
+            item === "cmc" || item === "cmic" || item === "charlotte" || item === "military" || item === "complex" || item === "the charlotte military-industrial complex" || preItem === "The Charlotte Military-Industrial Complex" || item === "<@&"+CMC.roleID+">"
+        )
+        return CMC;
+        else if (
+            item === "tu" || item === "toronto" || item === "united" || item === "toronto united" || preItem === "Toronto United" || item === "<@&"+TU.roleID+">"
+        )
+        return TU;
+        else if (
+            item === "jgl" || item === "johannesburg" || item === "great" || item === "lakers" || item === "johannesburg great lakers" || preItem === "Johannesburg Great Lakers" || item === "<@&"+JGL.roleID+">"
+        )
+        return JGL;
+        else if (
+            item === "rye" || item === "riyadh" || item === "energy" || item === "riyadh energy" || preItem === "Riyadh Energy" || item === "<@&"+RYE.roleID+">"
+        )
+        return RYE;
+        else if (
+            item === "pol" || item === "pride" || item === "lagos" || item === "the pride of lagos" || preItem === "The Pride of Lagos" || item === "<@&"+POL.roleID+">"
+        )
+        return POL;
+        else if (
+            item === "spi" || item === "sao" || item === "paulo" || item === "interestelar" || item === "interstellar" || item === "sao paulo interestelar" || preItem === "Sao Paulo Interestelar" || item === "<@&"+SPI.roleID+">"
+        )
+        return SPI;
+
         // Update these with offical names and abbreviations for all factions
     },  
     searchID(User) {//returns the class of the discord tag of the person doing an action
@@ -57,6 +97,17 @@ module.exports = {
         else if (User.roles.cache.some((r) => r.name === FRV.fName)) return FRV;
         else if (User.roles.cache.some((r) => r.name === HKR.fName)) return HKR;
         else if (User.roles.cache.some((r) => r.name === LEL.fName)) return LEL;
+        else if (User.roles.cache.some((r) => r.name === MCV.fName)) return MCV;
+        else if (User.roles.cache.some((r) => r.name === AVC.fName)) return AVC;
+        else if (User.roles.cache.some((r) => r.name === MXC.fName)) return MXC;
+        else if (User.roles.cache.some((r) => r.name === CMC.fName)) return CMC;
+        else if (User.roles.cache.some((r) => r.name === TU.fName)) return TU;
+        else if (User.roles.cache.some((r) => r.name === JGL.fName)) return JGL;
+        else if (User.roles.cache.some((r) => r.name === RYE.fName)) return RYE;
+        else if (User.roles.cache.some((r) => r.name === POL.fName)) return POL;
+        else if (User.roles.cache.some((r) => r.name === SPI.fName)) return SPI;
+        else if (User.roles.cache.some((r) => r.name === SUPER.fName)) return SUPER;
+
     },
     createAssetsMessage(targetClass) {//creates a new message specifically for the Assets of all teams
         var message = "```CSS\n" + targetClass.fName + "'s Assets:\n------------------------------\nZillions: " + targetClass.zillions + "\n";
@@ -74,7 +125,7 @@ module.exports = {
         }
         else{
          message = message + targetClass.coach.Name + " " + targetClass.coach.Last_Name + "\nSalary: " + targetClass.coach.Salary + "\n";  
-         message = message + "Performance: " + targetClass.coach.Performance_Range + "\nKnown For: ." + targetClass.coach.Known_for + "\n[Bonus Strategy]: [" + targetClass.coach.Bonus_Strategy + "]\n";
+         message = message + "Performance: " + targetClass.coach.Performance_Range + `\nActual Performance : ${targetClass.coach.Actual_Performance} \nKnown For: .` + targetClass.coach.Known_for + "\n[Bonus Strategy]: [" + targetClass.coach.Bonus_Strategy + "]\n";
         }
 
         message = message + "\nCurrent Coach Bid:\n"
@@ -100,10 +151,11 @@ module.exports = {
     },//createAssetsMessage 
     async updateKudosChannel(message) {//updates the kudos channel with the current information from the spreadsheets
         let kudosData = await this.getAllKudos();
-        channel = message.client.channels.cache.get("734173772017565757")
+        //channel = message.client.channels.cache.get("734173772017565757") //737793495917527104
+        channel = message.guild.channels.cache.find(c => c.name === `kudos-tracker`)
         channel.bulkDelete(50);        
 
-        var msg = "```CSS\n Current Kudos:\n---------------------------------------------" + 
+        var msg = "```CSS\n Current Kudos:\n---------------------------------------------------" + 
         "\n\tTeams   | Starting | [Remaining] | .Acquired. |" //+  
         //"------------------------------------------------------------------------------------------------------------------\n";
         msg = msg + "\n```"
@@ -124,7 +176,19 @@ module.exports = {
     },//updateKudosChannel 
     IntTwoChars(i) {
         return (`0${i}`).slice(-2);
-    },       
+    },  
+    getTimeStamp(){
+        let date_ob = new Date();
+        let date = this.IntTwoChars(date_ob.getDate());
+        let month = this.IntTwoChars(date_ob.getMonth() + 1);
+        let year = date_ob.getFullYear();
+        let hours = this.IntTwoChars(date_ob.getHours());
+        let minutes = this.IntTwoChars(date_ob.getMinutes());
+        let seconds = this.IntTwoChars(date_ob.getSeconds());
+        let dateDisplay = `${hours}:${minutes}:${seconds} ${month}/${date}/${year}`;
+
+        return dateDisplay;
+    },//getTimeStamp     
 //////////////////////////CASH FUNCTIONS//////////////////////////
     async updateCashSpreadsheet(sender, receiver, cash) {
 
@@ -374,7 +438,11 @@ module.exports = {
 
 
             console.log("Draft Data has been loaded from Google Speadsheets.");
-            console.log("currently active/past drafts\n" + draftingTeam.length)
+            console.log("currently active/past drafts\n" + draftingTeam.length);
+
+            if(draftingTeam.length > 0){
+                this.updateStat();
+            }
 
           //console.log(sheet.cellStats); // total cells, loaded, how many non-empty
 
@@ -505,28 +573,20 @@ module.exports = {
           const rows = await sheet.getRows(); // can pass in { limit, offset }
           var athleteJSON = "{ \n"
 
-          for (var i = 0; i < 90; i++){
+          for (var i = 0; i < 112; i++){
             athleteJSON = athleteJSON + `"${i+1}" : `;
               var atheleData = {
                   Name: `${rows[i].Name}`,
                   League_Nom_de_Plume: `${rows[i].League_Nom_de_Plume}`,
                   FRANCHISE: `${rows[i].FRANCHISE}`,
                   Position: `${rows[i].Position}`,
-                  Salary: `${rows[i].Salary}`,
-                  Popularity: `${rows[i].Popularity}`,
-                  Playstyles: `${rows[i].Playstyles}`,
-                  Buff_NESS: `${rows[i].Buff_NESS}`,
-                  Theoretical_Squat_Strength: `${rows[i].Theoretical_Squat_Strength}`,
-                  Juke_Torque: `${rows[i].Juke_Torque}`,
-                  Robot_Percent: `${rows[i].Robot_Percent}`,
-                  Chakra: `${rows[i].Chakra}`,              
-                  Doctor_Notes: `${rows[i].Doctor_Notes}`,
-                  Williams_Ratio: `${rows[i].Williams_Ratio}`,
-                  Last_Season_Highlight: `${rows[i].Last_Season_Highlight}`,
+                  //Salary: `${rows[i].Salary}`,
+
                   athleteID: (i+1)
               }//var atheleData  
-          
+
               athleteArray[i+1] = new Athlete(atheleData);
+              //athleteArray.push(new Athlete(atheleData));
             athleteJSON = athleteJSON + JSON.stringify(atheleData, null, 2) + ',\n';
 
           }//for i <90
@@ -542,7 +602,7 @@ module.exports = {
         }); 
 
         for (var i = 0; i < athleteArray.length; i++){
-            if (athleteArray[i].FRANCHISE){
+            if (athleteArray[i].FRANCHISE && athleteArray[i].FRANCHISE != "undefined"){
                 //console.log(athleteArray[i])
                 let exist = false;
                 let team = this.protoValidateTarget(athleteArray[i].FRANCHISE);
@@ -559,7 +619,7 @@ module.exports = {
         //console.log("Athlete Data has been loaded from Google Speadsheets.");
     },//setupAthletes
 //////////////////////////STATS FUNCTIONS////////////////////////// 
-async getStatToken(target, type) {//get cash of current player
+    async getStatToken(target, type) {//get cash of current player
 
     await doc.useServiceAccountAuth({
       client_email: creds.client_email,
@@ -614,7 +674,39 @@ async getStatToken(target, type) {//get cash of current player
         console.log("Stats loaded from JSON")
         return statArray;
     },//load athleates
-async updateStatToken(target, type, GOS) {
+    updateStat(){
+        statArray = [];
+        var aData;
+        var i = 0
+        fs.readFile('./modules/dataFiles/statDataBackup.json', 'utf8', (err, jsonString) => {
+            if (err) {
+                console.log("Error reading file from disk:", err)
+                return
+            }
+            try {
+                aData = JSON.parse(jsonString)
+                //console.log(aData.[1]) // => "Customer address is: Infinity Loop Drive"
+                //console.log(Object.keys(aData));
+                
+                for (var key in aData) {
+                    if (aData.hasOwnProperty(key)) {      
+                      var val = aData[key];
+
+                      //new Stats(val);
+                      statArray.push(new Stats(val));    // adds a new element (Lemon) to fruits 
+                      //console.log(statArray[i]);
+                      i++;
+                    }
+                  }
+                  
+            } catch(err) {
+                console.log('Error parsing JSON string:', err)
+            }
+        })
+        console.log("Updated from statDataBackup")
+        return statArray;
+    },
+    async updateStatToken(target, type, GOS, inquiry) {
 
     await doc.useServiceAccountAuth({
       client_email: creds.client_email,
@@ -626,7 +718,8 @@ async updateStatToken(target, type, GOS) {
   
     const sheet = doc.sheetsByIndex[7]; // get's the "Stat Token" page of the sheets
   
-    await (sheet.loadCells('H2:I21'));
+    await (sheet.loadCells('A2:I90'));
+    //const rows = await sheet.getRows(); // can pass in { limit, offset }
 
     const logCell2 = sheet.getCellByA1(`I19`); // or A1 style notation
     googleLogRow = logCell2.value;
@@ -645,13 +738,11 @@ async updateStatToken(target, type, GOS) {
 
     logCell2.value = googleLogRow + 1;
 
-    await sheet.saveUpdatedCells();
-
-    const rows = await sheet.getRows(); // can pass in { limit, offset }
-    rows[googleLogRow].Inquierer = target.fName; //
-    rows[googleLogRow].Inquiry_Type = type;
-    rows[googleLogRow].GoS = GOS;
-
+    let inquiererCell = sheet.getCellByA1(`A${googleLogRow}`);
+    let typeCell = sheet.getCellByA1(`B${googleLogRow}`);
+    let gosCell = sheet.getCellByA1(`C${googleLogRow}`);
+    let timeCell = sheet.getCellByA1(`D${googleLogRow}`);
+    let notesCell = sheet.getCellByA1(`E${googleLogRow}`);
 
     let date_ob = new Date();
     let date = this.IntTwoChars(date_ob.getDate());
@@ -662,10 +753,14 @@ async updateStatToken(target, type, GOS) {
     let seconds = this.IntTwoChars(date_ob.getSeconds());
     let dateDisplay = `${hours}:${minutes}:${seconds} ${month}/${date}/${year}`;
 
+    inquiererCell.value = target.fName; //
+    typeCell.value = type;
+    gosCell.value = GOS;
+    timeCell.value = dateDisplay;
+    notesCell.value = inquiry;
 
-    rows[googleLogRow].Timestamp = dateDisplay
+    await sheet.saveUpdatedCells();
 
-    await rows[googleLogRow].save();
     console.log("stat token updated")
 },//updateCashSpreadsheet
 //////////////////////////COACHES FUNCTIONS//////////////////////////    
@@ -683,7 +778,7 @@ async updateStatToken(target, type, GOS) {
           const rows = await sheet.getRows(); // can pass in { limit, offset }
           var coachJSON = "{ \n"
 
-          for (var i = 0; i < 16; i++){
+          for (var i = 0; i < 18; i++){
             coachJSON = coachJSON + `"${i+1}" : `;
             var coachData = {
                 coachID: i+1,
@@ -697,6 +792,7 @@ async updateStatToken(target, type, GOS) {
                 Performance_Range: `${rows[i].Performance_Range}`,
                 Min_Performance: `${rows[i].Min_Performance}`,
                 Max_Performance: `${rows[i].Max_Performance}`,
+                Actual_Performance: `${rows[i].Actual_Performance}`,
                 changedFranchise: false,
                 bids: []
             }//var coachData  
@@ -760,7 +856,7 @@ async updateStatToken(target, type, GOS) {
           const rows = await sheet.getRows(); // can pass in { limit, offset }
 
           if (offer.bid > 0){//if this is a incoming bid
-            let logRow = parseInt(rows[18].CURRENT_FRANCHISE);
+            let logRow = parseInt(rows[20].CURRENT_FRANCHISE);
             //console.log(logRow);
 
             rows[logRow].Team = team.fName;
@@ -768,9 +864,9 @@ async updateStatToken(target, type, GOS) {
             rows[logRow].Coach = offer.lName; 
             rows[logRow].Time = dateDisplay
 
-            rows[18].CURRENT_FRANCHISE = (logRow + 1);
+            rows[20].CURRENT_FRANCHISE = (logRow + 1);
             await rows[logRow].save();      
-            await rows[18].save();                                
+            await rows[20].save();                                
           }
 
 

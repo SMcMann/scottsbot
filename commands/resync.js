@@ -21,21 +21,17 @@ module.exports = {
         await functions.updateFromGoogle();
         functions.updateKudosChannel(message);
 
-        let draftTracker = "722279997959569458"
-        let vpLounge = "728370259148669040";
-
         for (i = 0; i < allTeams.length; i++) {
             //update all teams banks AKA Assets
-            //console.log(allTeams[i].coachBid);
-            channel = message.client.channels.cache.get(allTeams[i].bankID);
+
+            //channel = message.client.channels.cache.get(allTeams[i].bankID);            
+            channel = message.guild.channels.cache.find(c => c.name === `${allTeams[i].tag}-assets`);
             channel.bulkDelete(5);
 
             var bankEmbed = functions.createAssetsMessage(allTeams[i]);
             channel.send(bankEmbed);
             //console.log(bankEmbed);
     
-            //delete all messages in the log
-            channel = message.client.channels.cache.get(allTeams[i].logID);
 
         }//for   
               

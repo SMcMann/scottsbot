@@ -7,7 +7,7 @@
         "logID": "731646692004200560", 
         "fName": "Supercomputer", 
         "roleID": "718854222090731540",
-        "tag": "sc", 
+        "tag": "super", 
         "cashCoordinates": "18",
         "statTokens" : 50,
         "bonusTokens" : 50,
@@ -17,11 +17,12 @@
             "lName": "",
             "bid": 0
             },
-        "coach" : ""
+        "coach" : "",
+        "assetID" : ""
     },
     "bju": {
-        "zillions" : "87",
-        "kudosBanked": "4",
+        "zillions" : "0",
+        "kudosBanked": "0",
         "acquiredKudos": "0",
         "bankID": "700148873091481641",
         "logID": "700073585049600061", 
@@ -37,11 +38,12 @@
             "lName": "",
             "bid": 0
             },
-        "coach" : ""
+        "coach" : "",
+        "assetID" : ""
     },
     "jtm": {
-        "zillions" : "84",
-        "kudosBanked": "3",
+        "zillions" : "0",
+        "kudosBanked": "0",
         "acquiredKudos": "0",
         "bankID": "733953788024717483",
         "logID": "733954108377137162", 
@@ -57,11 +59,12 @@
             "lName": "",
             "bid": 0
             },
-        "coach" : ""
+        "coach" : "",
+        "assetID" : ""
     },
     "mm": {
-        "zillions" : "85",
-        "kudosBanked": "5",
+        "zillions" : "0",
+        "kudosBanked": "0",
         "acquiredKudos": "0",
         "bankID": "700074074537459933",
         "logID": "700074043402878987", 
@@ -77,10 +80,11 @@
             "lName": "",
             "bid": 0
             },
-        "coach" : ""
+        "coach" : "",
+        "assetID" : ""
     },
     "osu": {
-        "zillions" : "75",
+        "zillions" : "0",
         "kudosBanked": "0",
         "acquiredKudos": "0",
         "bankID": "699501222318702683",
@@ -97,11 +101,12 @@
             "lName": "",
             "bid": 0
             },
-        "coach" : ""
+        "coach" : "",
+        "assetID" : ""
     },    
     "frv": {
-        "zillions" : "85",
-        "kudosBanked": "5",
+        "zillions" : "0",
+        "kudosBanked": "0",
         "acquiredKudos": "0",
         "bankID": "699501156845617292",
         "logID": "699404648649588906", 
@@ -117,10 +122,11 @@
             "lName": "",
             "bid": 0
             },
-        "coach" : ""
+        "coach" : "",
+        "assetID" : ""
     },
     "hkr": {
-        "zillions" : "83",
+        "zillions" : "0",
         "kudosBanked": "0",
         "acquiredKudos": "0",
         "bankID": "733956803498475531",
@@ -137,7 +143,8 @@
             "lName": "",
             "bid": 0
             },
-        "coach" : ""
+        "coach" : "",
+        "assetID" : "1"
     },
     "lel": {
         "zillions" : 0,
@@ -157,6 +164,196 @@
             "lName": "",
             "bid": 0
             },
-        "coach" : ""
+        "coach" : "",
+        "assetID" : ""
+    },
+    "mcv": {
+        "zillions" : "0",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "",
+        "logID": "", 
+        "fName": "The Murmansk Convoy", 
+        "roleID": "737884215005413458",
+        "tag": "mcv",
+        "cashCoordinates": "9",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : "",
+        "assetID" : ""
+    },
+    "avc": {
+        "zillions" : "0",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "",
+        "logID": "", 
+        "fName": "Anaheim VC", 
+        "roleID": "737884347947942010",
+        "tag": "avc",
+        "cashCoordinates": "10",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : "",
+        "assetID" : ""
+    },
+    "cmc": {
+        "zillions" : "0",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "",
+        "logID": "", 
+        "fName": "The Charlotte Military-Industrial Complex", 
+        "roleID": "737884584716402699",
+        "tag": "cmc",
+        "cashCoordinates": "11",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : "",
+        "assetID" : ""
+    },
+    "mxc": {
+        "zillions" : "0",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "",
+        "logID": "", 
+        "fName": "Mixcoatl Mexico City", 
+        "roleID": "737884447075991552",
+        "tag": "mxc",
+        "cashCoordinates": "12",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : "",
+        "assetID" : ""
+    },
+    "tu": {
+        "zillions" : "0",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "",
+        "logID": "", 
+        "fName": "Toronto United", 
+        "roleID": "737884824328601630",
+        "tag": "tu",
+        "cashCoordinates": "13",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : "",
+        "assetID" : ""
+    },
+    "jgl": {
+        "zillions" : "0",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "",
+        "logID": "", 
+        "fName": "Johannesburg Great Lakers", 
+        "roleID": "737884907979669556",
+        "tag": "jgl",
+        "cashCoordinates": "14",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : "",
+        "assetID" : ""
+    },
+    "pol": {
+        "zillions" : "0",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "",
+        "logID": "", 
+        "fName": "The Pride of Lagos", 
+        "roleID": "737885182316773456",
+        "tag": "pol",
+        "cashCoordinates": "15",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : "",
+        "assetID" : ""
+    },
+    "rye": {
+        "zillions" : "0",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "",
+        "logID": "", 
+        "fName": "Riyadh Energy", 
+        "roleID": "737884907979669556",
+        "tag": "rye",
+        "cashCoordinates": "16",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : "",
+        "assetID" : ""
+    },
+    "spi": {
+        "zillions" : "0",
+        "kudosBanked": "0",
+        "acquiredKudos": "0",
+        "bankID": "",
+        "logID": "", 
+        "fName": "Sao Paulo Interestelar", 
+        "roleID": "737885256740241408",
+        "tag": "spi",
+        "cashCoordinates": "17",
+        "statTokens" : 1,
+        "bonusTokens" : 1,
+        "athletes" : [],
+        "coachBid": {
+            "fName": "",
+            "lName": "",
+            "bid": 0
+            },
+        "coach" : "",
+        "assetID" : ""
     }
   }

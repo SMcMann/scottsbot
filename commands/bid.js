@@ -10,18 +10,28 @@ module.exports = {
     description: 'allows players to bid on coaches',
     guildOnly: true,
     args: true,
+    argsAmount: 2,
     usage: "<Coaches' Last Name> <Bid Amount>",
     async execute(message, args) {
-        message.channel.send('```CSS\nWorking...\n```');        
-        //await functions.setupCoaches();
-
         let senderClass = functions.searchID(message.member);
         if (!senderClass){
             return message.reply("```css\nYou do not have a valid role\n```")
+        }        
+
+        if (message.channel.name != `${senderClass.tag}-terminal`){
+            message.reply("```css\n You must issue commands inside your team's terminal. Please try again inside '" + senderClass.tag +"-terminal' \n```")
+             return;
         }
 
+        message.channel.send('```CSS\nWorking...\n```');        
+        //await functions.setupCoaches();
 
         let senderJob = message.member.roles.cache.some((r) => r.name === "GM")
+
+        if (!senderJob){
+            message.reply("```CSS\nYou must be an GM to bid on Coaches\n```")
+            return;
+        }
 
         if (!senderJob){
             message.reply("```CSS\nYou must be an GM to bid on Coaches\n```")
@@ -93,7 +103,7 @@ module.exports = {
                     message.reply("```CSS\nYou Bid has been placed\n```");
 
                     //resend asset message
-                    channel = message.client.channels.cache.get(senderClass.bankID);
+                    channel = message.guild.channels.cache.find(c => c.name === `${senderClass.tag}-assets`);
                     channel.bulkDelete(2);
 
                     exampleEmbed = functions.createAssetsMessage(senderClass);

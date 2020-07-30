@@ -10,20 +10,27 @@ module.exports = {
     description: 'Drops your current Bid',
     guildOnly: true,
     args: false,
+    argsAmount: 0,
     //usage: "<Athlete's ID>",
     async execute(message, args) {
-        message.channel.send('```CSS\nWorking...\n```');
 
         let dropperClass = functions.searchID(message.member);
         if (!dropperClass){
             return message.reply("```css\nYou do not have a valid role\n```")
         }
 
+        if (message.channel.name != `${dropperClass.tag}-terminal`){
+            message.reply("```css\n You must issue commands inside your team's terminal. Please try again inside '" + dropperClass.tag +"-terminal' \n```")
+             return;
+        }
+
+        message.channel.send('```CSS\nWorking...\n```');
+
         let superComputer = message.member.roles.cache.some((r) => r.name === "Supercomputer")
         let senderJob = message.member.roles.cache.some((r) => r.name === "GM")
 
         if (!senderJob){
-            message.reply("```CSS\nYou must be a GM to draft!\n```")
+            message.reply("```CSS\nYou must be a GM to drop a bid!\n```")
             return;
         }  
 
@@ -59,7 +66,8 @@ module.exports = {
                 message.reply("```CSS\nYou Bid has been dropped\n```");
 
                 //resend asset message
-                channel = message.client.channels.cache.get(dropperClass.bankID);
+                
+                channel = message.guild.channels.cache.find(c => c.name === `${dropperClass.tag}-assets`)
                 channel.bulkDelete(2);
 
                 exampleEmbed = functions.createAssetsMessage(dropperClass);
